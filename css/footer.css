@@ -1,0 +1,155 @@
+﻿.footer {
+    margin-top: 115px;
+    place-content: bottom;
+}
+
+hr{
+    color: white; 
+    background-color: white;     
+    border: none;
+    height: 1px; 
+}
+.waves {
+    width: 100%;
+    height: 65px;
+}
+
+.wave {
+    position: absolute;
+    height: 120px;
+    width: 100%;
+    background: url('../images/wave3.svg') repeat-x;
+    background-size: 1440px 120px;
+    animation: wave 10s linear infinite;
+}
+
+@keyframes wave {
+    0% {
+        background-position-x: 0;
+    }
+    0% {
+        background-position-x: -1440px;
+    }
+}
+
+.wave.wave-2 {
+    background: url('../images/wave2.svg') repeat-x;
+    animation-delay: .2s;
+    animation-direction: reverse;
+}
+
+.wave.wave-3 {
+    background: url('../images/wave1.svg') repeat-x;
+    animation-duration: 5s;
+}
+
+.footer-text {
+    padding: 40px 132px 0 132px;
+    background-color: #7C9DF8;
+    bottom: 0;
+}
+
+.footer-content {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.logo-footer {
+    width: 160px;
+    cursor: pointer;
+}
+
+.footer_links {
+    list-style: none;
+    margin-right: 0;
+}
+
+.footer_links li {
+    display: inline-block;
+    padding: 0 50px;
+}
+
+.footer_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.footer_links li a:hover {
+    color: #FFDC26;
+}
+
+.style1 a {
+    font-family: 'Geologica', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h4 {
+    font-family: 'Geologica', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.transparent-footer {
+    width: 200px;
+    height: 54px;
+    margin: 0;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.transparent-footer:hover {
+    transition: all 0.3s ease 0s;
+    background-color: #FFFFFF;
+    color: #262626;
+}
+
+.media {
+    width: 42px;
+    height: 42px;
+    margin: auto;
+    background-color: #7C9DF8;
+    border: none;
+    color: transparent;
+    margin-left: 20px;
+}
+
+.media:hover {
+    width: 42px;
+    height: 42px;
+    transition: all 0.3s ease 0s;
+}
+
+.media.in {
+    background-image: url(../images/Linkedin.svg);
+}
+
+.media.fb {
+    background-image: url(../images/Facebook.svg);
+}
+
+.media.tw {
+    background-image: url(../images/Twitter.svg);
+}
+
+.in:hover {
+    background-image: url(../images/Linkedins.svg);
+}
+
+.fb:hover {
+    background-image: url(../images/Facebooks.svg);
+}
+
+.tw:hover {
+    background-image: url(../images/Twitters.svg);
+}
+

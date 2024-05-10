@@ -1,0 +1,396 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/graphs.css" rel="stylesheet">
+    <link href="css/catalog.css" rel="stylesheet">
+    <link href="css/partners.css" rel="stylesheet">
+    <link href="css/donations.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <title>Про нас</title>
+
+    <script src="https://flbulgarelli.github.io/headbreaker/js/headbreaker.js"></script>
+</head>
+<body>
+<header id="site-header">
+    <a href="home.html">
+        <img alt="logo" class="logo" src="images/Group.svg"/>
+    </a>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="home.html#about">Про нас</a></li>
+            <li><a href="home.html#analysis">Статистика</a></li>
+            <li><a href="home.html#donations">Допомога</a></li>
+            <li><a href="home.html#catalog">Каталог</a></li>
+        </ul>
+    </nav>
+    <div>
+        <a class="cta" href="#">
+            <button class="button like">а</button>
+        </a>
+        <a class="cta" href="#">
+            <button class="button transparent">Задонатити</button>
+        </a>
+        <a class="cta" href="pets.html?id=all">
+            <button class="button yellow" id="all">Знайти друга</button>
+        </a>
+    </div>
+</header>
+
+<section class="home" id="home">
+    <div class="image">
+        <img alt="image" src="images/cat.png"/>
+    </div>
+
+    <div class="content">
+        <h1>Обери собі друга</h1>
+        <p>
+            Вітаємо у світі доброти та турботи! Наш притулок - дім для тих, кого полюбили вулиці та забули люди.
+            <br/>Перегляньте наших чотирилапих друзів, які чекають на свій другий шанс на щасливе життя!<br>
+        </p>
+        <a class="cta" href="pets.html?id=all">
+            <button class="button search"> Знайти друга</button>
+        </a>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="content">
+        <h1 class="heading">Про наш притулок</h1>
+        <p>
+            Ми - команда ентузіастів, які об'єднали свої сили для того, щоб створити особливий куточок добра та надії
+            для бездомних тварин. Наш притулок - це не просто місце, де вони знаходять тимчасовий притулок, але і де
+            починається новий етап їхнього життя.
+            <br><br/>
+            Ми віримо в силу людської доброти та турботи. Наша місія - забезпечити кожному чотири подруги найкращим, що
+            має для їх приготування життя. Ми працюємо разом із волонтерами, ветеринарними фахівцями та усією
+            спільнотою, щоб змінити життя на краще.
+            <br/><br/>
+            Приєднайтеся до нас у цьому захоплюючому шляху рятунку та любові. Разом ми створюємо історію, які наповнюють
+            життя сенсом та прекрасом. Допоможіть нам будувати мости добра для наших пухнастих друзів!
+        </p>
+    </div>
+    <div class="image">
+        <img alt="image" src="images/image.svg"/>
+    </div>
+</section>
+
+<section class="analysis" id="analysis">
+    <h1 class="heading">Аналіз донатів</h1>
+    <div class="graph">
+
+        <div class="card">
+            <div class=" center">
+                <div class="progress">
+                    <svg class="progress-bar" height="300" width="300">
+                        <circle class="progress-circle" cx="150" cy="150" r="110"></circle>
+                        <circle class="progress-circle" cx="150" cy="150" r="110"></circle>
+                    </svg>
+                    <div class="text">
+                        66%
+                        <span>100 тисяч / місяць</span>
+                    </div>
+                </div>
+            </div>
+            <span>На їжу</span>
+            <button>Зробити внесок</button>
+        </div>
+        <div class="card1">
+            <div class=" center">
+                <div class="progress">
+                    <svg class="progress-bar" height="300" width="300">
+                        <circle class="progress-circle" cx="150" cy="150" r="110"></circle>
+                        <circle class="progress-circle" cx="150" cy="150" r="110"></circle>
+                    </svg>
+                    <div class="text">
+                        34%
+                        <span>100 тисяч / місяць</span>
+                    </div>
+                </div>
+            </div>
+            <span>На стирилізацію</span>
+            <button>Зробити внесок</button>
+        </div>
+
+        <div class="card2">
+            <div class=" center">
+                <div class="progress">
+                    <svg class="progress-bar" height="300" width="300">
+                        <circle class="progress-circle" cx="150" cy="150" r="110"></circle>
+                        <circle class="progress-circle" cx="150" cy="150" r="110"></circle>
+                    </svg>
+                    <div class="text">
+                        88%
+                        <span>100 тисяч / місяць</span>
+                    </div>
+                </div>
+            </div>
+            <span>На тимчасове житло</span>
+            <button>Зробити внесок</button>
+        </div>
+    </div>
+</section>
+
+<section class="donations" id="donations">
+    <div class="background-yellow">
+        <div class="block">
+            <div class="buttons">
+                <div class="whole-button">
+                    <button class="donation-button active">Разова допомога</button>
+                    <div class="underline underline-active"></div>
+                </div>
+                <div class="whole-button">
+                    <button class="donation-button">Щомісячна допомога</button>
+                    <div class="underline"></div>
+                </div>
+            </div>
+
+            <div class="background-blue">
+                <div class="donat-content">
+                    <div class="text-content">
+                        <h1 class="heading-donat">Обери суму разового внеску</h1>
+                        <h1 class="heading-donat1 hidden">Обери суму мiсячного внеску</h1>
+                    </div>
+                </div>
+
+                <div class="donat-content">
+                    <div class="wrapper">
+                            <button class="button transparent-donat">50 грн</button>
+                            <button class="button transparent-donat">100 грн</button>
+                            <button class="button transparent-donat">200 грн</button>
+                            <button class="button transparent-donat">500 грн</button>
+                            <button class="button transparent-donat">1000 грн</button>
+                            <button class="button transparent-donat">Інша сума</button>
+                    </div>
+
+                    <a class="cta" href="#">
+                        <button class="button yellow-donat">Задонатити</button>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="catalog" id="catalog">
+    <h1 class="heading">Знайти друга</h1>
+
+    <div class="container">
+        <div class="box">
+            <div class="card-image dogs"></div>
+
+            <a class="cta" href="pets.html?id=dog">
+                <button class="button yellow" id="dog">Песики</button>
+            </a>
+        </div>
+        <div class="box">
+            
+            <div class="card-image cats"></div>            
+            <a class="cta" href="pets.html?id=cat">
+                <button class="button yellow" id="cat">Котики</button>
+            </a>
+        </div>
+        <div class="box">
+            <div class="card-image birds"></div>
+            <a class="cta" href="pets.html?id=bird">
+                <button class="button yellow" id="bird">Пташки</button>
+            </a>
+        </div>
+        <div class="box">
+            <div class="card-image mice"></div>
+            <a class="cta" href="pets.html?id=rat">
+                <button class="button yellow" id="rat">Гризунчики</button>
+            </a>
+        </div>
+    </div>
+
+    <a class="cta" href="pets.html?id=all">
+        <button class="button transparent" id="all">Дивитися більше</button>
+    </a>
+</section>
+
+<section class="game">
+    <div class="game-header">
+        <h1 class="heading">Зіграємо в гру</h1>
+
+        <h4 class="game-subtitle active" id="gameSubtitle1">Крок 1 - обери тваринку</h4>
+        <h4 class="game-subtitle" id="gameSubtitle2">Крок 2 - склади тваринку</h4>
+        <h4 class="game-subtitle" id="gameSubtitle3">Крок 3 - забери тваринку</h4>
+
+        <div class="game-loader stage1" id="gameLoader"></div>
+    </div>
+
+    <div class="game-screen active" id="gameScreen1">
+        <div class="wrapper">
+            <div class="image-container">
+                <img src="images/gamePets/1.png" alt="" onclick="handleStartGame('images/gamePets/1-puzzle.png')">
+            </div>
+            <div class="image-container">
+                <img src="images/gamePets/2.png" alt="" onclick="handleStartGame('images/gamePets/2-puzzle.png')">
+                <img src="images/gamePets/3.png" alt="" onclick="handleStartGame('images/gamePets/3-puzzle.png')">
+            </div>
+            <div class="image-container">
+                <img src="images/gamePets/4.png" alt="" onclick="handleStartGame('images/gamePets/4-puzzle.png')">
+                <img src="images/gamePets/5.png" alt="" onclick="handleStartGame('images/gamePets/5-puzzle.png')">
+            </div>
+            <div class="image-container">
+                <img src="images/gamePets/6.png" alt="" onclick="startGame()">
+            </div>
+            <div class="image-container">
+                <img src="images/gamePets/7.png" alt="" onclick="handleStartGame('images/gamePets/7-puzzle.png')">
+                <img src="images/gamePets/8.png" alt="" onclick="handleStartGame('images/gamePets/8-puzzle.png')">
+            </div>
+            <div class="image-container">
+                <img src="images/gamePets/9.png" alt="" onclick="handleStartGame('images/gamePets/9-puzzle.png')">
+            </div>
+        </div>
+    </div>
+
+    <div class="game-screen" id="gameScreen2">
+        <div class="game-puzzle" id="game-puzzle"></div>
+    </div>
+
+    <div class="game-screen" id="gameScreen3">
+        <div class="game-result" id="game-result">
+            <div class="game-result-actions">
+                <button class="button yellow" onclick="showModal()">Усиновити</button>
+                <a class="cta" href="#">
+                    <button class="button like">а</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="game-screen" id="game2Screen2">
+        <div class="board" id="board"></div>
+    </div>
+
+</section>
+
+<section class="partners">
+    <h1 class="heading">Партнери</h1>
+
+    <div class="container">
+        <div class="partners-box">
+            <div class="image"><img alt="image" src="images/p1.svg"/></div>
+        </div>
+        <div class="partners-box">
+            <div class="image"><img alt="image" src="images/p2.svg"/></div>
+        </div>
+        <div class="partners-box">
+            <div class="image"><img alt="image" src="images/p3.svg"/></div>
+        </div>
+        <div class="partners-box">
+            <div class="image"><img alt="image" src="images/p4.svg"/></div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="waves">
+        <div class="wave"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+    </div>
+    <div class="footer-text">
+        <div class="footer-content top">
+
+            <a class="cta" href="home.html">
+                <img alt="logo" class="logo-footer" src="images/Group.svg" />
+                </a>
+                <nav>
+                    <ul class="footer_links">
+                        <li class="style1"><a href="home.html#about">Про нас</a></li>
+                        <li class="style1"><a href="home.html#analysis">Статистика</a></li>
+                        <li class="style1"><a href="home.html#donations">Допомога</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <a class="cta" href="pets.html">
+                        <button class="button transparent-footer">Знайти друга</button>
+                    </a>
+                </div>
+        </div>
+        <hr>
+        <div class="footer-content">
+            <h4>Усі права захищені</h4>
+            <div>
+                <a class="cta" href="#">
+                    <button class="button media in">а</button>
+                </a>
+                <a class="cta" href="#">
+                    <button class="button media fb">а</button>
+                </a>
+                <a class="cta" href="#">
+                    <button class="button media tw">а</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal" id="modal">
+    <div class="modal-backdrop"></div>
+    <div class="form-wrapper">
+        <div class="form-title">
+            <h2>Зв’яжись з нами</h2>
+            <button class="button x-button" onclick="hideModal()">а</button>
+        </div>
+        <div class="form">
+            <div class="inputs">
+                <div class="form-control">
+                    <input type="text" required>
+                    <label>*Твоє ім’я</label>
+                </div>
+                <div class="form-control">
+                    <input type="password" required>
+                    <label>*Твое прізвище</label>
+                </div>
+                <div class="form-control">
+                    <input type="password" required>
+                    <label>*Номер телефону</label>
+                </div>
+                <div class="form-control">
+                    <input type="password" required>
+                    <label>*Твій E-mail</label>
+                </div>
+            </div>
+            <div class="form-text">
+                <input type="text" required>
+                <label>Залиши коментар</label>
+
+            </div>
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="conditions">
+                    <label for="conditions">Я ознайомився/лась з Умовами використання сайту та погоджуюся з тим, що
+                        введена
+                        мною особиста інформація буде використана згідно з Політикою приватності Притулку.</label>
+                </div>
+            </div>
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+            </div>
+            <button class="button">Усиновити тваринку</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+</script>
+
+<script src="script.js"></script>
+<script src="petscript.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

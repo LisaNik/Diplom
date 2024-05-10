@@ -1,0 +1,26 @@
+﻿
+.partners {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 120px;
+}
+
+.partners-box {
+    background: #7C9DF8;
+    width: 282px;
+    height: 124px;
+    margin: 0 10px 0 10px;
+    border-radius: 32px;
+    display: grid;
+    place-items: center;
+}
+
+
+.partners {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

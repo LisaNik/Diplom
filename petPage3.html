@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/petpage.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <title></title>
+</head>
+<body>
+<header id="site-header">
+    <a href="home.html">
+        <img class="logo" src="images/Group.svg" alt="logo"/>
+    </a>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Статистика</a></li>
+            <li><a href="#">Допомога</a></li>
+            <li><a href="#">Каталог</a></li>
+        </ul>
+    </nav>
+    <but>
+        <button class="button like">а</button>
+        <a class="cta" href="#">
+            <button class="button transparent">Задонатити</button>
+        </a>
+        <a class="cta" href="pets.html">
+            <button class="button yellow">Знайти друга</button>
+        </a>
+    </but>
+</header>
+
+<section class="animals" id="about">
+    <div class="background-yellow">
+        <div class="block">
+
+
+            <div class="background-pet">
+                <div class="donat-content">
+                    <div class="image">
+                        <img src="profile/c1.png" alt="image"/>
+                    </div>
+                </div>
+
+                <div class="donat-content">
+                    <div class="inform">
+                        <div class="title-pet">
+
+                            <h1 class="info-name">Сем</h1>
+                            <div class="info-btn">
+                                <a class="cta" >
+                                    <button class="button like-pet">а</button>
+                                </a>
+                                <a class="cta" href="#">
+                                    <button class="button yellow-pet" onclick="showModal()">Усиновити</button>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h4 class="features-pet">хлопчик, 1 рік</h4>
+                        </div>
+                        <div class="title">
+
+                            <h3 class="name-pet">Про тваринку:</h3>
+                        </div>
+                        <div class="title">
+
+                            <p class="discr">
+                                Кіт Сем — це герой історії, який став безпритульним через важкі обставини війни. 
+                                Його господарі змушені були залишити свій дім через небезпеку та переїхати в інше місце, 
+                                і кіт Сем залишився зачиненим в квартирі, позбавлений турботи та уваги, яку він отримував раніше.
+
+                                Сем — це дружелюбний кіт з виразними очима та чарівною зовнішністю. 
+                                Хоча він опинився в складних умовах, Сем демонструє велику силу духу та витримку. 
+                                Він шукає тепло та розуміння, і його добре серце залишається відкритим для можливості знайти нових друзів та знову знайти своє місце в світі.
+
+                               </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+</section>
+
+<section class="small-catalog">
+
+    <div class="background-yellow-catalog">
+
+        <div class="background-blue-catalog">
+
+            <div class="donat-content-catalog">
+                <h1 class="heading-donat-catalog">Більше тваринок</h1>
+            </div>
+
+            <div class="cards">
+                <div class="card all cats">
+                    <div class="card__img c2"></div>
+                    <div class="card__descr-wrapper">
+                        <h3 class="name">Дейзі</h3>
+                        <h4 class="features">дівчинка, 5 місяців</h4>
+                        <div class="card__links">
+                            <button class="button yellow-pet" onclick="showModal()">Усиновити</button>
+                            <button class="button like-pet">а</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card all cats">
+                    <div class="card__img c3"></div>
+                    <div class="card__descr-wrapper">
+                        <h3 class="name">Марта</h3>
+                        <h4 class="features">дівчинка, 4 роки</h4>
+                        <div class="card__links">
+                            <button class="button yellow-pet" onclick="showModal()">Усиновити</button>
+                            <button class="button like-pet">а</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card all cats">
+                    <div class="card__img c4"></div>
+                    <div class="card__descr-wrapper">
+                        <h3 class="name">Шерлок</h3>
+                        <h4 class="features">хлопчик, 2 роки</h4>
+                        <div class="card__links">
+                            <button class="button yellow-pet" onclick="showModal()">Усиновити</button>
+                            <button class="button like-pet">а</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card all cats">
+                    <div class="card__img c5"></div>
+                    <div class="card__descr-wrapper">
+                        <h3 class="name">Ельфік</h3>
+                        <h4 class="features">хлопчик, 8 років</h4>
+                        <div class="card__links">
+                            <button class="button yellow-pet" onclick="showModal()">Усиновити</button>
+                            <button class="button like-pet">а</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="more">
+                <a class="cta" href="pets.html">
+                    <button class="button transparent">Показати ще</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="footer">
+    <div class="waves">
+        <div class="wave"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+    </div>
+    <div class="footer-text">
+        <div class="footer-content top">
+            <a class="cta" href="home.html">
+                <img alt="logo" class="logo-footer" src="images/Group.svg" />
+            </a>
+            <nav>
+                <ul class="footer_links">
+                    <li class="style1"><a href="#">Про нас</a></liclass="style1">
+                    <li class="style1"><a href="#">Статистика</a></li>
+                    <li class="style1"><a href="#">Допомога</a></li>
+                </ul>
+            </nav>
+            <but>
+                <a class="cta" href="pets.html">
+                    <button class="button transparent-footer">Знайти друга</button>
+                </a>
+            </but>
+        </div>
+        <hr>
+        <div class="footer-content">
+            <h4>Усі права захищені</h4>
+            <but>
+                <a class="cta" href="#">
+                    <button class="button media in">а</button>
+                </a>
+                <a class="cta" href="#">
+                    <button class="button media fb">а</button>
+                </a>
+                <a class="cta" href="#">
+                    <button class="button media tw">а</button>
+                </a>
+            </but>
+        </div>
+    </div>
+</section>
+
+<div class="modal" id="modal">
+    <div class="modal-backdrop"></div>
+    <div class="form-wrapper">
+        <div class="form-title">
+            <h2>Зв’яжись з нами</h2>
+            <button class="button x-button" onclick="hideModal()">а</button>
+        </div>
+        <div class="form">
+            <div class="inputs">
+                <div class="form-control">
+                    <input type="text" required>
+                    <label>*Твоє ім’я</label>
+                </div>
+                <div class="form-control">
+                    <input type="password" required>
+                    <label>*Твое прізвище</label>
+                </div>
+                <div class="form-control">
+                    <input type="password" required>
+                    <label>*Номер телефону</label>
+                </div>
+                <div class="form-control">
+                    <input type="password" required>
+                    <label>*Твій E-mail</label>
+                </div>
+            </div>
+            <div class="form-text">
+                <input type="text" required>
+                <label>Залиши коментар</label>
+
+            </div>
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="conditions">
+                    <label for="conditions">Я ознайомився/лась з Умовами використання сайту та погоджуюся з тим, що
+                        введена
+                        мною особиста інформація буде використана згідно з Політикою приватності Притулку.</label>
+                </div>
+            </div>
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+            </div>
+            <button class="button">Усиновити тваринку</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script src="petscript.js"></script>
+</body>
+</html>

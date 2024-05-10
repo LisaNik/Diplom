@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/petcatalog.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title></title>
+</head>
+<body>
+<header id="site-header">
+    <a href="home.html">
+        <img class="logo" src="images/Group.svg" alt="logo"/>
+    </a>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="home.html#about">Про нас</a></li>
+            <li><a href="home.html#analysis">Статистика</a></li>
+            <li><a href="home.html#donations">Допомога</a></li>
+            <li><a href="home.html#catalog">Каталог</a></li>
+        </ul>
+    </nav>
+    <but>
+        <a class="cta" href="#">
+            <button class="button like">а</button>
+        </a>
+        <a class="cta" href="#">
+            <button class="button transparent">Задонатити</button>
+        </a>
+        <a class="cta" href="pets.html?id=all">
+            <button class="button yellow">Знайти друга</button>
+        </a>
+    </but>
+</header>
+
+
+<section class="animals" id="about">
+    <div class="background-yellow">
+        <div class="block">
+            <div class="buttons">
+                <div class="whole-button">
+                    <button class="pets-button" id="all">Усі</button>
+                    <div class="underline" id="all"></div>
+                </div>
+                <div class="whole-button">
+                    <button class="pets-button" id="dog">Песики</button>
+                    <div class="underline" id="dog"></div>
+                </div>
+                <div class="whole-button">
+                    <button class="pets-button" id="cat">Котики</button>
+                    <div class="underline" id="cat"></div>
+                </div>
+                <div class="whole-button">
+                    <button class="pets-button " id="bird">Пташки</button>
+                    <div class="underline" id="bird"></div>
+                </div>
+                <div class="whole-button">
+                    <button class="pets-button" id="rat">Гризунчики</button>
+                    <div class="underline" id="rat"></div>
+                </div>
+            </div>
+
+            <div class="background-blue">
+                <div class="donat-content">
+                    <h1 class="heading-donat">Прихисти тваринку</h1>
+                </div>
+
+                <div class="donat-content">
+                    <div class="wrapper">
+                        <div class="container">
+                            <div class="select-btn" id="size">
+                                <span class="btn-text"  data-prefix="Розмір">Розмір</span>
+                                <span class="arrow-dwn">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </div>
+                            <ul class="list-items">
+                                <li class="item size" id="small">
+                                    <span class="item-text">Маленький (до 30см)</span>                    
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                </li>
+                                <hr>
+                                <li class="item size" id="medium" >
+                                    <span class="item-text">Середній (30-60см)</span>                    
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                </li>
+                                <hr>
+                                <li class="item size" id="big">
+                                    <span class="item-text">Великий (від 60см)</span>                    
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                </li>
+                                <hr>
+                                <li class="item size" id="all">
+                                    <span class="item-text">Всі</span>                    
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                </li>
+                            </ul>
+            
+            
+                        </div>
+                        
+                        <div class="container">
+                            <div class="select-btn" id="gender" >
+                                <span class="btn-text"data-prefix="Стать" >Стать</span>
+                                <span class="arrow-dwn">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </div>
+                            <ul class="list-items">
+                                <li class="item gender" id="male">
+                                    <span class="item-text">Хлопчик</span>                    
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                </li>
+                                <hr>
+                                <li class="item gender" id="female">
+                                    <span class="item-text">Дівчинка</span>                    
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                </li>
+                                <hr>
+                                <li class="item gender" id="all">
+                                    <span class="item-text">Всі</span>                    
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                </li>
+                            </ul>
+            
+            
+                        </div>
+                        
+                        <div class="container">
+                            <div class="select-btn" id="age" data-prefix="Вік">
+                                <span class="btn-text"  data-prefix="Вік">Вік</span>
+                                <span class="arrow-dwn">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </div>
+                            <ul class="list-items">
+                                <li class="item age" id="young">
+                                    <span class="item-text">до 1-го року</span>                    
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                </li>
+                                <hr>
+                                <li class="item age" id="middle">
+                                    <span class="item-text">1-5 років</span>                    
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                </li>
+                                <hr>
+                                <li class="item age" id="old">
+                                    <span class="item-text">від 5-ти років</span>                    
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                </li>
+                                <hr>
+                                <li class="item age" id="all">
+                                    <span class="item-text">Всі</span>                    
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                </li>
+                            </ul>     
+                        </div>
+                        
+                        <a class="cta" href="#">
+                            <button class="button yellow-donat">Пошук</button>
+                        </a>                    
+                    </div>
+                </div>
+
+                <div class="cards">
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        
+    </div>
+
+    
+</section>
+
+
+
+<section class="footer">
+    <div class="waves">
+        <div class="wave"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+    </div>
+    <div class="footer-text">
+        <div class="footer-content top">
+            <a class="cta" href="home.html">
+                <img alt="logo" class="logo-footer" src="images/Group.svg" />
+            </a>
+            <nav>
+                <ul class="footer_links">
+                    <li class="style1"><a href="home.html#about">Про нас</a></liclass="style1">
+                    <li class="style1"><a href="home.html#analysis">Статистика</a></li>
+                    <li class="style1"><a href="home.html#donations">Допомога</a></li>
+                </ul>
+            </nav>
+            <but>
+                <a class="cta" href="pets.html">
+                    <button class="button transparent-footer">Знайти друга</button>
+                </a>
+            </but>
+        </div>
+        <hr>
+        <div class="footer-content">
+            <h4>Усі права захищені</h4>
+            <but>
+                <a class="cta" href="#">
+                    <button class="button media in">а</button>
+                </a>
+                <a class="cta" href="#">
+                    <button class="button media fb">а</button>
+                </a>
+                <a class="cta" href="#">
+                    <button class="button media tw">а</button>
+                </a>
+            </but>
+        </div>
+    </div>
+</section>
+
+
+<div class="modal" id="modal">
+    <div class="modal-backdrop"></div>
+    <div class="form-wrapper">
+        <div class="form-title">
+            <h2>Зв’яжись з нами</h2>
+            <button class="button x-button" onclick="hideModal()">а</button>
+        </div>
+        <div class="form">
+            <div class="inputs">
+                <div class="form-control">
+                    <input type="text" required>
+                    <label>*Твоє ім’я</label>
+                </div>
+                <div class="form-control">
+                    <input type="text" required>
+                    <label>*Твое прізвище</label>
+                </div>
+                <div class="form-control">
+                    <input type="text" required>
+                    <label>*Номер телефону</label>
+                </div>
+                <div class="form-control">
+                    <input type="text" required>
+                    <label>*Твій E-mail</label>
+                </div>
+            </div>
+            <div class="form-text">
+                <input type="text" required>
+                <label>Залиши коментар</label>
+
+            </div>
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="conditions">
+                    <label for="conditions">Я ознайомився/лась з Умовами використання сайту та погоджуюся з тим, що
+                        введена
+                        мною особиста інформація буде використана згідно з Політикою приватності Притулку.</label>
+                </div>
+            </div>
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+            </div>
+            <button class="button" onclick="hideModal()">Усиновити тваринку</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="petsphp.js"></script>
+<script src="script.js"></script>
+<script src="petscript.js"></script>
+</body>
+</html>

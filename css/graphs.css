@@ -1,0 +1,187 @@
+﻿.analysis {
+    padding: 120px 0 120px 0;
+    margin-bottom: 80px;
+}
+
+
+.graph {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 340px;
+    height: 380px;
+    background-color: #FFDC26;
+    border: none;
+    border-radius: 48px;
+    margin: 0 10px 0 10px;
+}
+
+.graph span {
+    text-align: center;
+    display: block;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #262626;
+    line-height: 0; /*Интерлиньяж (расстояние между строк)*/
+}
+
+.graph button {
+
+    cursor: pointer;
+    width: 200px;
+    height: 54px;
+    display: block;
+    margin: auto;
+    border-radius: 0 0 24px 24px;
+    margin-top: 52px;
+    background-color: #5B85F6;
+    border: 1px solid white;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: white;
+}
+
+.graph button:hover {
+    transition: all 0.3s ease 0s;
+    background-color: #FFFFFF;
+    color: #262626;
+}
+
+.center {
+    width: 340px;
+    height: 312px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+circle {
+    fill: none;
+}
+
+svg {
+    transform: rotate(-90deg);
+}
+
+.card circle:nth-child(1) {
+    stroke: white;
+    opacity: 20%;
+    stroke-width: 30px;
+}
+
+.card circle:nth-child(2) {
+    stroke: white;
+    stroke-dasharray: 690;
+    stroke-dashoffset: calc(690 - (690 * 66) / 100);
+    stroke-linecap: round;
+    stroke-width: 30px;
+    animation: progress 3s ease;
+}
+
+@keyframes progress {
+    from {
+        stroke-dashoffset: 690;
+    }
+}
+
+.text {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 200;
+    font-size: 48px;
+    line-height: 80px; /*Интерлиньяж (расстояние между строк)*/
+    color: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text span {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #262626;
+    opacity: 70%;
+    text-decoration: none;
+}
+
+
+.card1 {
+    width: 340px;
+    height: 380px;
+    background-color: white;
+    border: none;
+    border-radius: 48px;
+    margin: 0 10px 0 10px;
+}
+
+.card1 circle:nth-child(1) {
+    stroke: #5B85F6;
+    opacity: 10%;
+    stroke-width: 30px;
+}
+
+.card1 circle:nth-child(2) {
+    stroke: #5B85F6;
+    stroke-dasharray: 690;
+    stroke-dashoffset: calc(690 - (690 * 34) / 100);
+    stroke-linecap: round;
+    stroke-width: 30px;
+    animation: progress 3s ease;
+}
+
+
+.card2 {
+    width: 340px;
+    height: 380px;
+    background-color: #7C9DF8;
+    border: none;
+    border-radius: 48px;
+    margin: 0 10px 0 10px;
+}
+
+.card2 circle:nth-child(1) {
+    stroke: white;
+    opacity: 10%;
+    stroke-width: 30px;
+}
+
+.card2 circle:nth-child(2) {
+    stroke: white;
+    stroke-dasharray: 690;
+    stroke-dashoffset: calc(690 - (690 * 88) / 100);
+    stroke-linecap: round;
+    stroke-width: 30px;
+    animation: progress 3s ease;
+}
+
+.card2 .text {
+    color: white;
+}
+
+.card2 .text span {
+    color: white;
+    opacity: 70%;
+}
+
+.card2 span {
+    color: white;
+    opacity: 100%;
+}
+

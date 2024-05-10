@@ -1,0 +1,162 @@
+.modal:not(.visible) {
+    display: none;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000c;
+}
+
+.form-wrapper {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border-radius: 32px;
+    padding: 48px;
+    width: 700px;
+    background: #5B85F6;
+}
+
+.form-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+.x-button {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    background-image: url('../images/close.svg');
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.x-button:hover {
+    width: 48px;
+    height: 48px;
+    background-image: url('../images/closehover.svg');
+}
+
+.form-wrapper h2 {
+    color: white;
+    font-size: 48px;
+}
+
+.form-wrapper form {
+    margin: 25px 0 65px;
+}
+
+.form .form-control {
+    height: 50px;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.form .form-text {
+    height: 50px;
+    position: relative;
+    margin-bottom: 90px;
+}
+
+.form-control input {
+    height: 54px;
+    width: 292px;
+    background-color: transparent;
+    border-radius: 32px;
+    border: 1px solid white;
+    font-size: 1rem;
+    padding: 0 20px;
+}
+
+.form-text input {
+    height: 120px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 32px;
+    border: 1px solid white;
+    font-size: 1rem;
+    padding: 0 20px;
+}
+
+.form-control input:is(:focus, :valid) {;
+    padding: 16px 20px 0;
+}
+
+.form-control label, .form-text label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+    color: white;
+    transition: all 0.1s ease;
+}
+
+.inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 308px);
+    grid-template-rows: repeat(2, 70px);
+}
+
+.form-control input:is(:focus, :valid) ~ label {
+    font-size: 0.75rem;
+    transform: translateY(-130%);
+}
+
+.form-text input:is(:focus, :valid) ~ label {
+    display: none;
+}
+
+.form-control input:is(:focus, :valid) {
+    border: 1px solid white;
+}
+
+.form button {
+    width: 100%;
+    height: 54px;
+    background-color: #FFDC26;
+    color: #262626;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s ease;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+.form button:hover {
+    transition: all 0.3s ease 0s;
+    background-color: #FFFFFF;
+    color: #262626;
+}
+
+.form-wrapper a {
+    text-decoration: none;
+}
+
+.form .form-help {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form .remember-me {
+    margin-bottom: 16px;
+    color: white;
+}
+
+.form .form-help :where(label, a) {
+    font-size: 0.9rem;
+}

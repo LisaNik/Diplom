@@ -1,0 +1,330 @@
+﻿
+.background-yellow {
+    width: 100%;
+    height: fit-content;
+    background-color: #5B85F6;
+    border-radius: 64px;
+    display: grid;
+    place-items: center;
+    padding-top: 212px;
+}
+
+.background-pet {
+    width: 1240px;
+    height: fit-content;
+    background-color: #7C9DF8;
+    border-radius: 64px 64px 64px 64px;
+    padding: 32px;
+    margin-bottom:120px;
+}
+.background-pet {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+.donat-content {
+    display: grid;
+    text-align: start;
+}
+
+.information {
+    position: fixed;
+    background-color: #5B85F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease 0s;
+    line-height: 100%; /*Интерлиньяж (расстояние между строк)*/
+}
+.info-name {
+    font-family: cocon;
+    font-size: 64px;
+    font-weight: 300;
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 100%; /*Интерлиньяж (расстояние между строк)*/
+}
+.inform{
+    padding-left:32px;
+}
+.name {
+    font-family: cocon;
+    font-weight: 300;
+    font-size: 24px;
+    margin-top: 0px;
+    line-height: 100%; /*Интерлиньяж (расстояние между строк)*/
+    margin-top: 16px;
+    color: white;
+}
+
+.features {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    opacity: 60%;
+    color: white;
+    margin-bottom: 3px;
+}
+
+.name-pet {
+    font-family: cocon;
+    font-weight: 300;
+    font-size: 24px;
+    margin-top: 0px;
+    line-height: 100%; /*Интерлиньяж (расстояние между строк)*/
+    color: white;
+    margin:32px 0px 16px 0px;
+}
+
+.features-pet {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: white;
+    margin-top:18px;
+}
+.discr {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    opacity: 60%;
+    color:white;
+    margin:0;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease 0s;
+    line-height: 100%; /*Интерлиньяж (расстояние между строк)*/
+}
+
+.title-pet {
+    display: grid;
+    grid-template-columns: 228px 226px;
+    grid-gap: 180px;
+}
+.info-btn {
+    display: grid;
+    grid-gap: 12px;
+}
+
+
+.info-btn {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+
+
+
+
+
+
+
+
+
+
+.background-yellow-catalog {
+    width: 100%;
+    height: 898px;
+    background-color: #FFDC26;
+    border-radius: 64px;
+    display: grid;
+    place-items: center;
+}
+
+.background-blue-catalog {
+    width: 1240px;
+    height: 770px;
+    background-color: #5B85F6;
+    border-radius: 64px;
+    padding: 64px 32px 64px 32px;
+    align-items: center;
+    align-items: start;
+    justify-content: center;
+}
+
+.more {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:48px;
+}
+.donat-content-catalog {
+    display: grid;
+    text-align: start;
+    align-items: center;
+}
+.heading-donat-catalog {
+    color: white;
+    font-size: 64px;
+    margin-bottom: 36px;
+}
+.transparent{
+    margin: 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 282px 282px 282px 282px;
+    grid-gap: 16px;
+}
+
+.card {
+    width: 282px;
+    height: 440px;
+    border-radius: 32px;
+    background: #7C9DF8;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 16px;
+    text-align: start;
+}
+
+
+.card__img {
+    width: 250px;
+    height: 272px;
+    border-radius: 32px;
+}
+
+.d1 {
+    background-image: url('../imagesPets/d1.svg');
+}
+
+.d2 {
+    background-image: url('../imagesPets/d2.svg');
+}
+
+.d3 {
+    background-image: url('../imagesPets/d3.svg');
+}
+
+.d4 {
+    background-image: url('../imagesPets/d4.svg');
+}
+
+.d5 {
+    background-image: url('../imagesPets/d5.png');
+}
+
+.c1 {
+    background-image: url('../imagesPets/c1.png');
+}
+
+.c2 {
+    background-image: url('../imagesPets/c2.png');
+}
+
+.c3 {
+    background-image: url('../imagesPets/c3.png');
+}
+
+.c4 {
+    background-image: url('../imagesPets/c4.png');
+}
+
+.c5 {
+    background-image: url('../imagesPets/c5.png');
+}
+
+.b1 {
+    background-image: url('../imagesPets/b1.png');
+}
+
+.b2 {
+    background-image: url('../imagesPets/b2.png');
+}
+
+.b3 {
+    background-image: url('../imagesPets/b3.png');
+}
+
+.b4 {
+    background-image: url('../imagesPets/b4.png');
+}
+
+.b5 {
+    background-image: url('../imagesPets/b5.png');
+}
+
+.r1 {
+    background-image: url('../imagesPets/r1.png');
+}
+
+.r2 {
+    background-image: url('../imagesPets/r2.png');
+}
+
+.r3 {
+    background-image: url('../imagesPets/r3.png');
+}
+
+.r4 {
+    background-image: url('../imagesPets/r4.png');
+}
+
+.r5 {
+    background-image: url('../imagesPets/r5.png');
+}
+
+
+.card__descr-wrapper {
+    display: grid;
+}
+
+
+.card__descr {
+    margin-top: 0px;
+    line-height: 100%;
+}
+
+
+.card__links {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+
+.yellow-pet {
+    width: 188px;
+    height: 54px;
+    margin: auto;
+    background-color: #FFDC26;
+    color: #262626;
+    font-weight: 500;
+}
+
+    .yellow-pet:hover {
+        transition: all 0.3s ease 0s;
+        background-color: #FFFFFF;
+        color: #262626;
+    }
+
+.like-pet {
+    width: 54px;
+    height: 54px;
+    margin: auto;
+    background-color: #7C9DF8;
+    border: none;
+    color: transparent;
+    background-image: url('../images/likes.svg');
+}
+
+.chosen {
+    background-image: url('../images/likeschosen.svg');
+}
+
+.like-pet:hover {
+    background-image: url('../images/likehover.svg');
+}
+
+.chosen:hover {
+    background-image: url('../images/likeschosen.svg');
+}
+

@@ -1,0 +1,65 @@
+﻿.catalog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 120px;
+    background-image: url(../images/backgr/Group-catalog.svg);
+    background-position: center;
+}
+
+.catalog .transparent {
+    display: block;
+    text-align: center;
+    width: 200px;
+}
+
+
+.container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 0 32px 0;
+}
+
+.box {
+    background: #7C9DF8;
+    width: 282px;
+    height: 360px;
+    margin: 0 10px 0 10px;
+    border-radius: 32px;
+    padding: 16px;
+}
+
+.card-image {
+    width: 250px;
+    height: 262px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.dogs {
+    background-image: url('../images/dog.png');
+}
+
+.cats {
+    background-image: url('../images/kitten.png');
+}
+
+.birds {
+    background-image: url('../images/bird.png');
+}
+
+.mice {
+    background-image: url('../images/rabbit.png');
+}
+
+.box .yellow {
+    display: block;
+    text-align: center;
+    width: 250px;
+}
+

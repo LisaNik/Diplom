@@ -1,0 +1,427 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600&display=swap');
+
+@import url(modal.css);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "cocon";
+    src: url("../fonts/cocon_regular.otf") format("opentype");
+}
+
+body {
+    font-family: "cocon", sans-serif;
+    background-color: #5B85F6;
+}
+
+li, a {
+    font-size: 16px;
+    font-weight: 200;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+button {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+#site-header {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    background-color: #5B85F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 132px;
+    transition: all 0.5s ease 0s;
+    z-index: 9001;
+}
+
+#site-header.hide {
+    top: -100px;
+}
+
+.logo {
+    cursor: pointer;
+    height: 32px;
+    width: 160px;
+}
+
+.nav_links {
+    list-style: none;
+    margin-right: 162px;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover, .nav_links li a.active {
+    color: #FFDC26;
+}
+
+.button {
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+
+.yellow {
+    width: 160px;
+    height: 54px;
+    margin: auto;
+    background-color: #FFDC26;
+    color: #262626;
+}
+
+.transparent {
+    width: 160px;
+    height: 54px;
+    margin: auto;
+    background-color: #5B85F6;
+    border: 1px solid white;
+    color: white;
+    margin-left: 10px;
+    margin-right: 12px;
+}
+
+.search {
+    width: 200px;
+    height: 54px;
+    margin: auto;
+    background-color: #FFDC26;
+    background-image: url(../images/search.svg);
+    padding-left: 30px;
+    color: #262626;
+}
+
+.yellow:hover, .transparent:hover, .search:hover {
+    transition: all 0.3s ease 0s;
+    background-color: #FFFFFF;
+    color: #262626;
+}
+
+.like {
+    width: 54px;
+    height: 54px;
+    margin: auto;
+    background-color: #7C9DF8;
+    border: none;
+    color: transparent;
+    background-image: url(../images/heart.png);
+}
+
+.like:hover {
+    width: 54px;
+    height: 54px;
+    transition: all 0.3s ease 0s;
+    background-image: url(../images/heart_hover.png);
+}
+
+
+.home {
+    display: flex;
+    align-items: top;
+    flex-wrap: wrap;
+    gap: 100px;
+    padding: 140px 140px 0 140px;
+
+    background-image: url(../images/backgr/Group-stars.svg);
+    background-position: center;
+
+
+    .image {
+        flex: 1 1 0;
+        height: 740px;
+        width: 540px;
+    }
+
+    .content {
+        flex: 1 1 0;
+        margin-top: 120px;
+        margin-left: 0;
+        margin-right: 90px;
+        color: #ffffff;
+    }
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 80px;
+    margin-top: 0;
+    line-height: 100%; /*Интерлиньяж (расстояние между строк)*/
+}
+
+p {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    opacity: 80%;
+    text-decoration: none;
+    margin-top: 40px;
+    margin-bottom: 40px; /* Отступ снизу */
+    line-height: 26px; /*Интерлиньяж (расстояние между строк)*/
+}
+
+
+.about {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-image: url(../images/background_about.png);
+    background-size: cover;
+    gap: 30px;
+    padding: 0 0 0 0;
+
+    .image {
+        flex: 1 1 0;
+    }
+
+    .content {
+        max-width: 500px;
+        flex: 1 1 0;
+        margin-top: 80px;
+        margin-bottom: 0;
+        margin-left: 132px;
+        margin-right: 0;
+        color: #ffffff;
+    }
+}
+
+.about .content h1 {
+    text-align: left;
+    font-size: 68px;
+    margin-top: 0;
+}
+
+.about .content p {
+    margin-bottom: 0; /* Отступ снизу */
+}
+
+.heading {
+    text-align: center;
+    color: white;
+    font-size: 68px;
+    margin-bottom: 48px;
+}
+
+.game {
+    margin-top: 120px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.game-subtitle {
+    font-family: 'Geologica', sans-serif;
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #bdcefb !important;
+    text-align: center;
+}
+
+.game-subtitle:not(.active) {
+    display: none;
+}
+
+.game-loader {
+    position: relative;
+    width: 780px;
+    height: 24px;
+    margin-bottom: 72px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 12px;
+    background-color: #7c9df8;
+}
+
+.game-loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 12px;
+    background-color: #ffdc26;    
+    transition: all 0.6s ease-in-out 0s;
+}
+
+.game-loader.stage1:after {
+    width: 35px;
+}
+
+.game-loader.stage2:after {
+    width: 380px;
+}
+
+.game-loader.stage3:after {
+    width: 100%;
+}
+
+.game-screen {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-screen:not(.active) {
+    display: none;
+}
+
+#gameScreen1 {
+    background-image: url(../images/gameBg.svg);
+    background-size: 982px auto;
+    background-repeat: no-repeat;
+    background-position: 100px 12px;
+}
+
+#gameScreen1 .wrapper {
+    display: flex;
+    align-items: center;
+}
+
+#gameScreen1 .image-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#gameScreen1 .image-container:not(:first-child) {
+    margin-left: 20px;
+}
+
+#gameScreen1 .image-container img {
+    object-fit: contain;
+    cursor: pointer;
+}
+
+#gameScreen1 .image-container:nth-child(1) img {
+    width: 160px;
+}
+
+#gameScreen1 .image-container:nth-child(2) img {
+    width: 203px;
+}
+
+#gameScreen1 .image-container:nth-child(2) *:not(:first-child) {
+    margin-top: 45px;
+}
+
+#gameScreen1 .image-container:nth-child(3) img {
+    width: 163px;
+}
+
+#gameScreen1 .image-container:nth-child(3) *:not(:first-child) {
+    margin-top: 25px;
+}
+
+#gameScreen1 .image-container:nth-child(4) img {
+    width: 183px;
+}
+
+#gameScreen1 .image-container:nth-child(5) img {
+    width: 163px;
+}
+
+#gameScreen1 .image-container:nth-child(5) *:not(:first-child) {
+    margin-top: 25px;
+}
+
+#gameScreen1 .image-container:nth-child(6) img {
+    width: 160px;
+}
+
+.game-puzzle, .game-result {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 64px;
+    padding: 48px;
+    background: #7C9DF8;
+}
+
+.game-result img {
+    width: 444px;
+    object-fit: contain;
+    margin-bottom: 16px;
+    border-radius: 32px;
+}
+
+.game-result .name {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.game-result p.info {
+    opacity: 0.6;
+    margin-block: 0;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.game-result-actions {
+    display: flex;
+    margin-top: 16px;
+}
+
+.game-result-actions > *:first-child {
+    flex-grow: 1;
+    margin-right: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 152px);
+    gap: 12px;
+    width: fit-content;
+    margin: auto;
+    background-color: #7C9DF8;
+    padding: 48px;
+    border-radius: 64px;
+}
+
+.tile {
+    width: 152px;
+    height: 152px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+    .tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    

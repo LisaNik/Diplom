@@ -1,0 +1,163 @@
+﻿
+.background-yellow {
+    width: 100%;
+    height: 720px;
+    background-color: #ffd800;
+    border-radius: 64px;
+    display: grid;
+    place-items: center;
+    background-image: url(../images/backgr/Group-animals.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.background-blue {
+    width: 1176px;
+    height: 467px;
+    border-radius: 0px 0px 44px 44px;
+    background-image: url(../images/backgr/Group-donat.svg);
+    
+
+}
+
+.hidden {
+    display: none;
+}
+
+.buttons {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.underline {
+    width: 588px;
+    height: 3px;
+    background-color: #7C9DF8;
+    vertical-align: bottom;
+}
+
+.donation-button {
+    width: 588px;
+    height: 85px;
+    display: block;
+    margin: auto;
+    border-radius: 44px 44px 0px 0px;
+    border: none;
+    font-family: cocon;
+    font-size: 24px;
+    font-weight: 200;
+    background-color: #7C9DF8;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .donation-button:hover {
+        transition: all 0.3s ease 0s;
+        background-color: white;
+        color: #262626;
+    }
+
+        .donation-button:hover ~ .underline {
+            background: white;
+            transition: all 0.3s ease 0s;
+        }
+
+.active {
+    background-color: #5B85F6;
+    color: #FFDC26;
+}
+
+    .active:hover {
+        transition: all 0.3s ease 0s;
+        background-color: #5B85F6;
+        color: #FFDC26;
+    }
+
+        .active:hover ~ .underline {
+            transition: all 0.3s ease 0s;
+            background: #FFDC26;
+        }
+
+.underline-active {
+    background-color: #FFDC26;
+}
+
+.background-blue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-content {
+    width: 300px;
+    height: 400px;
+    text-align: start;
+    margin-top: 40px;
+}
+
+.donat-content {
+    margin: 0px 100px 0px 100px;
+    display: grid;
+    text-align: start;
+    align-items: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 240px 240px;
+    grid-gap: 16px;
+    margin-bottom: 16px;
+}
+
+.transparent-donat {
+    width: 240px;
+    height: 64px;
+    margin: 0;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+    .yellow-donat:hover, .transparent-donat:hover {
+        transition: all 0.3s ease 0s;
+        background-color: #FFFFFF;
+        color: #262626;
+    }
+
+.using {
+    background-color: #FFDC26;
+    color: #262626;
+    border: 1px solid #FFDC26;
+}
+
+    .using:hover {
+        background-color: #FFDC26;
+        color: #262626;
+        border: 1px solid #FFDC26;
+    }
+
+.yellow-donat {
+    width: 496px;
+    height: 84px;
+    margin: auto;
+    background-color: #FFDC26;
+    color: #262626;
+    font-weight: 500;
+}
+
+.heading-donat {
+    color: white;
+    font-size: 80px;
+    margin-bottom: 50px;
+}
+
+.heading-donat1 {
+    color: white;
+    font-size: 80px;
+    margin-bottom: 50px;
+}
