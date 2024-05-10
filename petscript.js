@@ -48,7 +48,6 @@ function resetActiveBtn() {
 
 ////////////////////////////////////////////LIKE
 
-
 document.querySelectorAll(".like-pet").forEach(button => {
     button.addEventListener("click", function() {
         this.classList.toggle("chosen");
