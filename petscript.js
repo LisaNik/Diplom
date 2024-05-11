@@ -108,3 +108,92 @@ document.querySelectorAll(".list-items").forEach(list => {
 
 
 
+
+
+
+
+
+
+// Define empty arrays to store selected parameters
+let selectedSize = ['small', 'medium', 'big','all'];
+let selectedAge = ['young', 'middle', 'old','all'];
+let selectedGender = ['male', 'female','all'];
+
+console.log("Selected Size:", selectedSize);
+console.log("Selected Age:", selectedAge);
+console.log("Selected Gender:", selectedGender);
+
+// Function to handle the search button click event
+function handleSearchButtonClick() {
+    // Clear the arrays before adding new selections
+    selectedSize = [];
+    selectedAge = [];
+    selectedGender = [];
+
+    // Iterate through dropdown menus and populate respective arrays
+    containers.forEach(container => {
+        const items = container.querySelectorAll(".item.checked");
+        const parameterType = container.getAttribute("id");
+
+        items.forEach(item => {
+            const value = item.getAttribute("id");
+
+            // Populate respective arrays based on parameter type
+            switch (parameterType) {
+                case "size":
+                    selectedSize.push(value);
+                    break;
+                case "age":
+                    selectedAge.push(value);
+                    break;
+                case "gender":
+                    selectedGender.push(value);
+                    break;
+                default:
+                    break;
+            }
+        });
+    });
+
+    if (selectedSize.length === 0 || selectedSize.includes('all')) {
+        selectedSize = ['small', 'medium', 'big','all'];
+    }
+    
+    if (selectedAge.length === 0 || selectedAge.includes('all')) {
+        selectedAge = ['young', 'middle', 'old','all'];
+    }
+    
+    if (selectedGender.length === 0 || selectedGender.includes('all')) {
+        selectedGender = ['male', 'female','all'];
+    }
+
+    console.log("Selected Size:", selectedSize);
+    console.log("Selected Age:", selectedAge);
+    console.log("Selected Gender:", selectedGender);
+
+    // Send the selected parameters to PHP using AJAX
+    fetch('profile.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            selectedSize: selectedSize,
+            selectedAge: selectedAge, // Include your predefined array here
+            selectedGender: selectedGender
+        })
+    })
+    // .then(response => response.json())
+    // .then(data => {
+    //     console.log(data); // Log the response from PHP (if needed)
+    //     // Handle the response as needed
+    // })
+    // .catch(error => {
+    //     console.error(error); // Log any errors (if needed)
+    // });
+   
+}
+
+// Add click event listener to the "Search" button
+const searchButton = document.getElementById("searchButton");
+searchButton.addEventListener("click", handleSearchButtonClick);
