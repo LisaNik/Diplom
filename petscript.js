@@ -112,7 +112,7 @@ document.querySelectorAll(".list-items").forEach(list => {
 
 
 
-
+//////////Запись в массив переменных
 
 // Define empty arrays to store selected parameters
 let selectedSize = ['small', 'medium', 'big','all'];
@@ -184,14 +184,14 @@ fetch('profile.php', {
         selectedGender: selectedGender
     })
 })
-.then(response => response.json())
-.then(data => {
-    console.log(data); // Log the response from PHP (if needed)
-    // Handle the response as needed
-})
-.catch(error => {
-    console.error(error); // Log any errors (if needed)
-});
+// .then(response => response.json())
+// .then(data => {
+//     console.log(data); // Log the response from PHP (if needed)
+//     // Handle the response as needed
+// })
+// .catch(error => {
+//     console.error(error); // Log any errors (if needed)
+// });
 
    
 }
