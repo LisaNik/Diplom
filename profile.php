@@ -1,5 +1,9 @@
 <?php
 $dbc = mysqli_connect('localhost', 'root', '', 'duckburg');
+$selectedSize = isset($_POST['selectedSize']) ? $_POST['selectedSize'] : array();
+$selectedAge = isset($_POST['selectedAge']) ? $_POST['selectedAge'] : array();
+$selectedGender = isset($_POST['selectedGender']) ? $_POST['selectedGender'] : array();
+
 
 $query = "SELECT * FROM profile ORDER BY RAND()";
 $result = mysqli_query($dbc, $query) or die(mysqli_error());

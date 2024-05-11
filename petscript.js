@@ -172,25 +172,27 @@ function handleSearchButtonClick() {
     console.log("Selected Gender:", selectedGender);
 
     // Send the selected parameters to PHP using AJAX
-    fetch('profile.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            selectedSize: selectedSize,
-            selectedAge: selectedAge, // Include your predefined array here
-            selectedGender: selectedGender
-        })
+    // Send the selected parameters to PHP using AJAX
+fetch('profile.php', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        selectedSize: selectedSize,
+        selectedAge: selectedAge,
+        selectedGender: selectedGender
     })
-    // .then(response => response.json())
-    // .then(data => {
-    //     console.log(data); // Log the response from PHP (if needed)
-    //     // Handle the response as needed
-    // })
-    // .catch(error => {
-    //     console.error(error); // Log any errors (if needed)
-    // });
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data); // Log the response from PHP (if needed)
+    // Handle the response as needed
+})
+.catch(error => {
+    console.error(error); // Log any errors (if needed)
+});
+
    
 }
 
