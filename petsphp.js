@@ -1,37 +1,46 @@
+let data = [];
+let likedId =[];
+document.addEventListener('DOMContentLoaded', () => {
+    getDataPhp();
+});
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     getAllData();
-// });
+async function getDataPhp() {
 
-
-async function getAllData() {
     const res = await fetch('./profile.php');
-    const data = await res.json();
-    data.forEach(profile => {
-        const profileCard = createProfile(profile, PetType); // Pass PetType as an argument
-        createButton(profile, profileCard);
-    });
+    data = await res.json();
+    
+    getAllData();
 }
 
-function createProfile(data, type) {
+function getAllData() {
+    const div = document.querySelector('.cards');
+    while (div.firstChild) {
+        div.removeChild(div.firstChild);
+    }
+
+    data.forEach(profile => {
+        const profileCard = createProfile(profile, PetType,selectedSize, selectedGender, selectedAge); // Pass PetType as an argument
+        createButton(profileCard);
+    });
+
+
+    //Проверка пустого div cards
+    const element =  document.querySelector('.cards');
+
+    if (element.classList.length == 0) {
+        element.innerHTML = "<h1>hello</h1>";
+    }
+}
+
+function createProfile(data, type, size, gender, age) {
     const profileDiv = document.createElement('div');
-    const dataType = data.type;
     profileDiv.classList.add('card');
     
-    if(dataType == type) { // Compare dataType with the type parameter
+    if((type == "all" || data.type == type) && gender.includes(data.gender) && age.includes(data.age) && size.includes(data.size))  { // Compare dataType with the type parameter
         profileDiv.id = data.name;
         profileDiv.innerHTML = `
             <img src="imagesPets/${data.img}">        
             <h3>${data.name}</h3>            
-            <h4>${data.gender}, ${data.age} ${data.type}</h4>
-        `;
-        document.querySelector('.cards').appendChild(profileDiv);
-    }
-    else if(type == "all") { // Compare dataType with the type parameter
-        profileDiv.id = data.name;
-        profileDiv.innerHTML = `
-            <img src="imagesPets/${data.img}">        
-            <h3>${data.name}</h3>
             <h4>${data.gender}, ${data.age} ${data.type}</h4>
         `;
         document.querySelector('.cards').appendChild(profileDiv);
@@ -43,9 +52,27 @@ function createProfile(data, type) {
     return profileDiv;
 }
 
+function createLikedProfile(data) {
+    const profileDiv = document.createElement('div');
+    profileDiv.classList.add('card');
+    
+    profileDiv.id = data.name;
+    profileDiv.innerHTML = `
+        <img src="imagesPets/${data.img}">        
+        <h3>${data.name}</h3>            
+        <h4>${data.gender}, ${data.age} ${data.type}</h4>
+    `;
+    document.querySelector('.liked-cards').appendChild(profileDiv);
+    
+     // Trigger reflow to restart the transition
+     profileDiv.offsetHeight;
+     // Apply fade-in animation by changing opacity
+     profileDiv.style.opacity = '1'; 
+    return profileDiv;
+}
 
 
-function createButton(data, profileCard) {
+function createButton(profileCard) {
     const linksDiv = document.createElement('div');
     linksDiv.classList.add('card_links');
     linksDiv.innerHTML = `    
@@ -57,6 +84,36 @@ function createButton(data, profileCard) {
     
     likePetButton.addEventListener('click', function() {
         this.classList.toggle('chosen');
+
+        const parentClass = this.closest('.card');
+        const parentId = parentClass.id;
+
+        
+        if (this.classList.contains('chosen')) {
+            
+            likedId.push(parentId);
+            document.getElementById('likes').innerHTML = `
+                    <h1>${data}</h1>
+                `;
+            
+        } else {
+            
+        const index = likedId.indexOf(parentId);
+        
+        likedId.splice(index,1);
+            document.getElementById('likes').innerHTML = `
+            <h1>${likedId}</h1>
+        `;
+        }
+
+
+        data.forEach(profile => {
+            if(likedId.includes(profile.name)){                
+                createLikedProfile(profile);
+            }
+        });
+
+
     });
 
     profileCard.appendChild(linksDiv); // Append the button to the profile card

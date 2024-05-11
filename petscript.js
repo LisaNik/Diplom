@@ -48,11 +48,15 @@ function resetActiveBtn() {
 
 ////////////////////////////////////////////LIKE
 
-document.querySelectorAll(".like-pet").forEach(button => {
-    button.addEventListener("click", function() {
-        this.classList.toggle("chosen");
-    });
-});
+// document.querySelectorAll(".like-pet").forEach(button => {
+//     button.addEventListener("click", function() {
+//         document.getElementById('likes').innerHTML = `
+//             <h1>byyyeee</h1>
+//         `;
+//         this.classList.toggle("chosen");
+        
+//     });
+// });
 
 ////////////////////Фильтр чекбокс
 
@@ -86,7 +90,6 @@ containers.forEach(container => {
         });
     });
 });
-
 
 document.body.addEventListener("click", (event) => {
     selectBtns.forEach(selectBtn => {
@@ -177,21 +180,23 @@ function handleSearchButtonClick() {
         gender: selectedGender
     }
 
+    getAllData();
+
   // Send AJAX request with fetch
-  fetch('profile.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(parameters)
-  })
-  .then(response => response.json()) // Parse JSON response from PHP
-  .then(data => {
-    // Update your page with filtered pet data (data will be the filtered pet objects)
-    console.log("Filtered Data:", data);
-    // ... update UI with filtered data here
-  })
-  .catch(error => console.error('Error:', error));
+//   fetch('profile.php', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(parameters)
+//   })
+//   .then(response => response.json()) // Parse JSON response from PHP
+//   .then(data => {
+//     // Update your page with filtered pet data (data will be the filtered pet objects)
+//     console.log("Filtered Data:", data);
+//     // ... update UI with filtered data here
+//   })
+//   .catch(error => console.error('Error:', error));
     
 
 }
