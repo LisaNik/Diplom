@@ -1,29 +1,20 @@
 <?php
 $dbc = mysqli_connect('localhost', 'root', '', 'duckburg');
-$selectedSize = isset($_POST['selectedSize']) ? $_POST['selectedSize'] : array();
-$selectedAge = isset($_POST['selectedAge']) ? $_POST['selectedAge'] : array();
-$selectedGender = isset($_POST['selectedGender']) ? $_POST['selectedGender'] : array();
 
 
-// // Build the WHERE clause for the query based on selected parameters
-// $whereClause = " WHERE";
-// if (!empty($selectedSize)) {
-//     $whereClause .= " size IN ('" . implode("','", $selectedSize) . "') AND";
-// }
-// if (!empty($selectedAge)) {
-//     $whereClause .= " age IN ('" . implode("','", $selectedAge) . "') AND";
-// }
-// if (!empty($selectedGender)) {
-//     $whereClause .= " gender IN ('" . implode("','", $selectedGender) . "') AND";
-// }
 
-// // Remove the trailing "AND" from the WHERE clause
-// $whereClause = rtrim($whereClause, " AND");
-
-// $query = "SELECT * FROM profile $whereClause";
-// $result = mysqli_query($dbc, $query) or die(mysqli_error());
+// $parameters = $_POST['parameters'];
+// $size = $parameters['size'];
+// $age = $parameters['age'];
+// $gender = $parameters['gender'];
 
 
+// $sizeCondition = "'" . implode("','", array_map('mysqli_real_escape_string', $parameters['size'])) . "'";
+// $ageCondition = "'" . implode("','", array_map('mysqli_real_escape_string', $parameters['age'])) . "'";
+// $genderCondition = "'" . implode("','", array_map('mysqli_real_escape_string', $parameters['gender'])) . "'";
+
+// // Создаем основную строку запроса SQL
+// $query = "SELECT * FROM profile WHERE size IN ($sizeCondition) AND age IN ($ageCondition) AND gender IN ($genderCondition)";
 
 $query = "SELECT * FROM profile ORDER BY RAND()";
 $result = mysqli_query($dbc, $query) or die(mysqli_error());
@@ -47,4 +38,7 @@ header('Content-type: application/json');
 print json_encode($data);
 
 mysqli_close($dbc);
+
+
+
 ?>

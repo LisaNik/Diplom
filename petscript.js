@@ -171,31 +171,17 @@ function handleSearchButtonClick() {
     console.log("Selected Age:", selectedAge);
     console.log("Selected Gender:", selectedGender);
 
-    // Send the selected parameters to PHP using AJAX
-    // Send the selected parameters to PHP using AJAX
-fetch('profile.php', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        selectedSize: selectedSize,
-        selectedAge: selectedAge,
-        selectedGender: selectedGender
-    })
-})
-// .then(response => response.json())
-// .then(data => {
-//     console.log(data); // Log the response from PHP (if needed)
-//     // Handle the response as needed
-// })
-// .catch(error => {
-//     console.error(error); // Log any errors (if needed)
-// });
+    const parameters = {
+        size : selectedSize,
+        age: selectedAge,
+        gender: selectedGender
+    }
 
-   
+    
+
 }
 
 // Add click event listener to the "Search" button
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", handleSearchButtonClick);
+
