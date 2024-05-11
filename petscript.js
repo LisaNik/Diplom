@@ -177,6 +177,21 @@ function handleSearchButtonClick() {
         gender: selectedGender
     }
 
+  // Send AJAX request with fetch
+  fetch('profile.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(parameters)
+  })
+  .then(response => response.json()) // Parse JSON response from PHP
+  .then(data => {
+    // Update your page with filtered pet data (data will be the filtered pet objects)
+    console.log("Filtered Data:", data);
+    // ... update UI with filtered data here
+  })
+  .catch(error => console.error('Error:', error));
     
 
 }

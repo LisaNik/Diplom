@@ -49,7 +49,7 @@ function createButton(data, profileCard) {
     const linksDiv = document.createElement('div');
     linksDiv.classList.add('card_links');
     linksDiv.innerHTML = `    
-        <button class="button yellow-pet" onclick="adoptPet('${data.name}')">Усиновити</button>
+        <button class="button yellow-pet" onclick="showModal()">Усиновити</button>
         <button class="like-pet">а</button>
     `;
     
