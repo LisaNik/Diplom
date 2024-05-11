@@ -115,9 +115,9 @@ document.querySelectorAll(".list-items").forEach(list => {
 //////////Запись в массив переменных
 
 // Define empty arrays to store selected parameters
-let selectedSize = ['small', 'medium', 'big','all'];
-let selectedAge = ['young', 'middle', 'old','all'];
-let selectedGender = ['male', 'female','all'];
+let selectedSize = ['small', 'medium', 'big'];
+let selectedAge = ['young', 'middle', 'old'];
+let selectedGender = ['male', 'female'];
 
 console.log("Selected Size:", selectedSize);
 console.log("Selected Age:", selectedAge);
@@ -155,16 +155,16 @@ function handleSearchButtonClick() {
         });
     });
 
-    if (selectedSize.length === 0 || selectedSize.includes('all')) {
-        selectedSize = ['small', 'medium', 'big','all'];
+    if (selectedSize.length === 0) {
+        selectedSize = ['small', 'medium', 'big'];
     }
     
-    if (selectedAge.length === 0 || selectedAge.includes('all')) {
-        selectedAge = ['young', 'middle', 'old','all'];
+    if (selectedAge.length === 0) {
+        selectedAge = ['young', 'middle', 'old'];
     }
     
-    if (selectedGender.length === 0 || selectedGender.includes('all')) {
-        selectedGender = ['male', 'female','all'];
+    if (selectedGender.length === 0) {
+        selectedGender = ['male', 'female'];
     }
 
     console.log("Selected Size:", selectedSize);
