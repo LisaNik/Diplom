@@ -191,10 +191,13 @@ searchButton.addEventListener("click", handleSearchButtonClick);
 
 
 
+const likeButtons = document.querySelectorAll(".button-like");
 
-
-document.getElementById('toggleSidebar').addEventListener('click', function() {
-    showSidebar();
+// Перебираем каждый элемент коллекции и добавляем обработчик событий
+likeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        showSidebar();
+    });
 });
 
 
