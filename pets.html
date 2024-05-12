@@ -11,6 +11,7 @@
 </head>
 <body>
 
+
 <header id="site-header">
     <a href="home.html">
         <img class="logo" src="images/Group.svg" alt="logo"/>
@@ -24,9 +25,7 @@
         </ul>
     </nav>
     <but>
-        <a class="cta" href="#">
-            <button class="button like">а</button>
-        </a>
+            <button class="button like" id="toggleSidebar">а</button>
         <a class="cta" href="#">
             <button class="button transparent">Задонатити</button>
         </a>
@@ -175,7 +174,18 @@
     <div class="liked-cards" id="likes">
         <h1>hi</h1>
     </div>
-    
+
+    <div class="black-back"></div>
+    <div class="sidebar">
+        <div class="sidebar-wrapper">
+            <div class="sidebar-title">                
+                <button class="button x-button" onclick="showSidebar()">а</button>
+                <h2>Обранці</h2>
+            </div>
+            <div class="sidebar-cards">
+            </div>
+        </div>  
+    </div> 
 </section>
 
 

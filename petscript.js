@@ -182,26 +182,30 @@ function handleSearchButtonClick() {
 
     getAllData();
 
-  // Send AJAX request with fetch
-//   fetch('profile.php', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(parameters)
-//   })
-//   .then(response => response.json()) // Parse JSON response from PHP
-//   .then(data => {
-//     // Update your page with filtered pet data (data will be the filtered pet objects)
-//     console.log("Filtered Data:", data);
-//     // ... update UI with filtered data here
-//   })
-//   .catch(error => console.error('Error:', error));
-    
-
 }
 
 // Add click event listener to the "Search" button
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", handleSearchButtonClick);
 
+
+
+
+
+
+document.getElementById('toggleSidebar').addEventListener('click', function() {
+    showSidebar();
+});
+
+
+function showSidebar(){
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+    
+    const blackBack = document.querySelector('.black-back');
+    if (sidebar.classList.contains('active')) {
+        blackBack.classList.add('visible');
+    } else {
+        blackBack.classList.remove('visible');
+    }
+}

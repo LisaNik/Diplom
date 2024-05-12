@@ -52,9 +52,29 @@ function createProfile(data, type, size, gender, age) {
     return profileDiv;
 }
 
+function getAllLikedData() {
+    const div = document.querySelector('.liked-cards');
+    while (div.firstChild) {
+        div.removeChild(div.firstChild);
+    }
+
+    data.forEach(profile => {
+        const profileCard = createProfile(profile, PetType,selectedSize, selectedGender, selectedAge); // Pass PetType as an argument
+        createButton(profileCard);
+    });
+
+
+    //Проверка пустого div cards
+    const element =  document.querySelector('.cards');
+
+    if (element.classList.length == 0) {
+        element.innerHTML = "<h1>hello</h1>";
+    }
+}
+
 function createLikedProfile(data) {
     const profileDiv = document.createElement('div');
-    profileDiv.classList.add('card');
+    profileDiv.classList.add('liked-card');
     
     profileDiv.id = data.name;
     profileDiv.innerHTML = `
@@ -62,7 +82,7 @@ function createLikedProfile(data) {
         <h3>${data.name}</h3>            
         <h4>${data.gender}, ${data.age} ${data.type}</h4>
     `;
-    document.querySelector('.liked-cards').appendChild(profileDiv);
+    document.querySelector('.sidebar-cards').appendChild(profileDiv);
     
      // Trigger reflow to restart the transition
      profileDiv.offsetHeight;
@@ -87,37 +107,85 @@ function createButton(profileCard) {
 
         const parentClass = this.closest('.card');
         const parentId = parentClass.id;
-
         
         if (this.classList.contains('chosen')) {
             
             likedId.push(parentId);
-            document.getElementById('likes').innerHTML = `
-                    <h1>${data}</h1>
-                `;
+            // document.getElementById('likes').innerHTML = `
+            //         <h1>${data}</h1>
+            //     `;
             
         } else {
-            
-        const index = likedId.indexOf(parentId);
+            const index = likedId.indexOf(parentId);
         
-        likedId.splice(index,1);
-            document.getElementById('likes').innerHTML = `
-            <h1>${likedId}</h1>
-        `;
+            likedId.splice(index,1);
+            //     document.getElementById('likes').innerHTML = `
+            //     <h1>${likedId}</h1>
+            // `;
         }
 
+        const div = document.querySelector('.sidebar-cards');
+        while (div.firstChild) {
+            div.removeChild(div.firstChild);
+        }
 
         data.forEach(profile => {
-            if(likedId.includes(profile.name)){                
-                createLikedProfile(profile);
+            if (likedId.includes(profile.name)) {
+                const profileLikedCard = createLikedProfile(profile);
+                createLikeButton(profileLikedCard);
             }
         });
-
-
+        
     });
 
     profileCard.appendChild(linksDiv); // Append the button to the profile card
 }
+
+
+function createLikeButton(profileCard) {
+    const linksDiv = document.createElement('div');
+    linksDiv.classList.add('card_links');
+    linksDiv.innerHTML = `    
+        <button class="button yellow-pet" onclick="showModal()">Усиновити</button>
+        <button class="like-pet chosen">а</button>
+    `;
+    
+    const likePetButton = linksDiv.querySelector('.like-pet');
+    
+    likePetButton.addEventListener('click', function() {
+
+        const parentClass = this.closest('.liked-card');
+        const parentId = parentClass.id;
+
+        //Ищем лайкнутую кнопку в классе card
+        const cardId = document.querySelector(`.card#${parentId}`);
+
+            // Находим кнопку "like-pet" внутри элемента "card"
+        const likeCardButton = cardId.querySelector('.like-pet');
+            // Применяем toggle к классу "chosen" кнопки "like-pet"
+        likeCardButton.classList.toggle('chosen');
+                    
+        const index = likedId.indexOf(parentId);
+        likedId.splice(index,1);
+        
+        const div = document.querySelector('.sidebar-cards');
+        while (div.firstChild) {
+            div.removeChild(div.firstChild);
+        }
+
+        data.forEach(profile => {
+            if (likedId.includes(profile.name)) {
+                const profileLikedCard = createLikedProfile(profile);
+                createLikeButton(profileLikedCard);
+            }
+            console.log(likedId);
+        });
+        
+    });
+    profileCard.appendChild(linksDiv); // Append the button to the profile card
+}
+
+
 
 function adoptPet(id) {
     // Определите, какую страницу усыновления открывать в зависимости от ID
