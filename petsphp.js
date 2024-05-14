@@ -2,7 +2,30 @@ let data = [];
 let likedId =[];
 document.addEventListener('DOMContentLoaded', () => {
     getDataPhp();
+    likedId=localStorage.getItem('likedId').split(',');
+    console.log(likedId);
 });
+
+function showLikedCards(){    
+    const div = document.querySelector('.sidebar-cards');
+    while (div.firstChild) {
+        div.removeChild(div.firstChild);
+
+    }
+
+    data.forEach(profile => {
+        if (likedId.includes(profile.name)) {
+            const profileLikedCard = createLikedProfile(profile);
+            createLikeButton(profileLikedCard);            
+        }
+        
+        // document.querySelectorAll('cards')
+        //     .getElementById(profile.name)
+        //     .getElementsByClassName('like-pet')[0]
+        //     .classList.add('chosen');
+
+    });
+}
 
 async function getDataPhp() {
 
@@ -10,6 +33,7 @@ async function getDataPhp() {
     data = await res.json();
     
     getAllData();
+    showLikedCards();
 }
 
 function getAllData() {
@@ -23,13 +47,12 @@ function getAllData() {
         createButton(profileCard);
     });
 
+    // //Проверка пустого div cards
+    // const element =  document.querySelector('.cards');
 
-    //Проверка пустого div cards
-    const element =  document.querySelector('.cards');
-
-    if (element.classList.length == 0) {
-        element.innerHTML = "<h1>hello</h1>";
-    }
+    // if (element.classList.length == 0) {
+    //     element.innerHTML = "<h1>hello</h1>";
+    // }
 }
 
 function createProfile(data, type, size, gender, age) {
@@ -44,6 +67,10 @@ function createProfile(data, type, size, gender, age) {
             <h4>${data.gender}, ${data.age} ${data.type}</h4>
         `;
         document.querySelector('.cards').appendChild(profileDiv);
+    }
+
+    if(likedId.includes(data.name)){
+
     }
      // Trigger reflow to restart the transition
      profileDiv.offsetHeight;
@@ -99,9 +126,15 @@ function createButton(profileCard) {
         <button class="button yellow-pet" onclick="showModal()">Усиновити</button>
         <button class="like-pet">а</button>
     `;
-    
     const likePetButton = linksDiv.querySelector('.like-pet');
+
+    if(likedId.includes(profileCard.id)){
+        likePetButton.classList.add('chosen');
+
+    }; // Append the button to the profile card
+
     
+        
     likePetButton.addEventListener('click', function() {
         this.classList.toggle('chosen');
 
@@ -124,17 +157,9 @@ function createButton(profileCard) {
             // `;
         }
 
-        const div = document.querySelector('.sidebar-cards');
-        while (div.firstChild) {
-            div.removeChild(div.firstChild);
-        }
+        localStorage.setItem("likedId", likedId);
 
-        data.forEach(profile => {
-            if (likedId.includes(profile.name)) {
-                const profileLikedCard = createLikedProfile(profile);
-                createLikeButton(profileLikedCard);
-            }
-        });
+        showLikedCards();
         
     });
 
@@ -168,23 +193,12 @@ function createLikeButton(profileCard) {
         const index = likedId.indexOf(parentId);
         likedId.splice(index,1);
         
-        const div = document.querySelector('.sidebar-cards');
-        while (div.firstChild) {
-            div.removeChild(div.firstChild);
-        }
-
-        data.forEach(profile => {
-            if (likedId.includes(profile.name)) {
-                const profileLikedCard = createLikedProfile(profile);
-                createLikeButton(profileLikedCard);
-            }
-            console.log(likedId);
-        });
+        showLikedCards();
+        localStorage.setItem('likedId',likedId);
         
     });
     profileCard.appendChild(linksDiv); // Append the button to the profile card
 }
-
 
 
 function adoptPet(id) {

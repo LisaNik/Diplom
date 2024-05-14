@@ -8,8 +8,9 @@
     <link href="css/catalog.css" rel="stylesheet">
     <link href="css/partners.css" rel="stylesheet">
     <link href="css/donations.css" rel="stylesheet">
+    <link href="css/quiz.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
-    <title>Про нас</title>
+    <title>Притулок для тварин</title>
     <script src="https://flbulgarelli.github.io/headbreaker/js/headbreaker.js"></script>
 </head>
 <body>
@@ -210,6 +211,36 @@
     </a>
 </section>
 
+<section class="quiz">    
+    <div class="background-quiz">        
+        <div class="background-question">                
+            <h1 class="heading" id="big-title">Яка тваринка тобі підходить?</h1>
+            <h2 id="result">Вам підходить:</h2>
+            <h4 id="title">Не можеш визначитися яку тваринку взяти додому?<br>
+                Тоді пройти цей тест і дізнайся, яка тваринка підходить саме тобі!</h4>
+            <p id="question"></p>
+            <div class="quiz-buttons">
+                <button class="quiz-btn" id="type1"></button>
+                <button class="quiz-btn" id="type2"></button>
+                <button class="quiz-btn" id="type3"></button>
+                <button class="quiz-btn" id="type4"></button>
+                <button class="quiz-btn" id="type5"></button>
+            </div>
+            <div class="quiz-buttons">
+                <p id="text1">Не згоден</p>
+                <p id="text2">Більш ні</p>
+                <p id="text3">Нейтрально</p>
+                <p id="text4">Більш так</p>
+                <p id="text5">Згоден</p>
+            </div>
+            
+            <button class="button yellow" id="quiz-btn">Пройти тест</button>
+        </div>
+
+    </div>
+</section>
+
+
 <section class="game">
     <div class="game-header">
         <h1 class="heading">Зіграємо в гру</h1>
@@ -285,6 +316,7 @@
         </div>
     </div>
 </section>
+
 
 <section class="footer">
     <div class="waves">
@@ -383,6 +415,7 @@
 
 <script src="script.js"></script>
 <script src="petscript.js"></script>
+<script src="petsphp.js"></script>
 <script src="game.js"></script>
 </body>
 </html>

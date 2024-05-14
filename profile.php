@@ -1,21 +1,6 @@
 <?php
 $dbc = mysqli_connect('localhost', 'root', '', 'duckburg');
 
-
-
-// $parameters = $_POST['parameters'];
-// $size = $parameters['size'];
-// $age = $parameters['age'];
-// $gender = $parameters['gender'];
-
-
-// $sizeCondition = "'" . implode("','", array_map('mysqli_real_escape_string', $parameters['size'])) . "'";
-// $ageCondition = "'" . implode("','", array_map('mysqli_real_escape_string', $parameters['age'])) . "'";
-// $genderCondition = "'" . implode("','", array_map('mysqli_real_escape_string', $parameters['gender'])) . "'";
-
-// // Создаем основную строку запроса SQL
-// $query = "SELECT * FROM profile WHERE size IN ($sizeCondition) AND age IN ($ageCondition) AND gender IN ($genderCondition)";
-
 $query = "SELECT * FROM profile ORDER BY RAND()";
 $result = mysqli_query($dbc, $query) or die(mysqli_error());
 
@@ -38,7 +23,5 @@ header('Content-type: application/json');
 print json_encode($data);
 
 mysqli_close($dbc);
-
-
 
 ?>

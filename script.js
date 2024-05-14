@@ -128,3 +128,99 @@ $(document).ready(function() {
 });
 
 
+//quizzzz
+
+const quizBtns = document.querySelectorAll(".quiz-btn");
+
+quizBtns.forEach(quizBtn => {
+    quizBtn.addEventListener("click", () => {
+        // Удаление класса "answer" у всех кнопок
+        quizBtns.forEach(btn => {
+            if (btn !== quizBtn) {
+                btn.classList.remove("answer");
+            }
+        });
+        // Тоггл класса "answer" на кнопке, на которую было нажато
+        quizBtn.classList.toggle("answer");
+    });
+});
+
+
+// function getBestCard() {
+//   const div = document.querySelector('.cards');
+
+//   data.forEach(profile => {
+
+//       if(profile.id === '1'){
+//           const profileCard = createProfile(profile); // Pass PetType as an argument
+//           createButton(profileCard);
+//       }
+//   });
+// }
+
+//тест
+var counter = 0;
+const questions = ["Твоя тваринка дуже активна та любить погратися."
+                            
+              ];
+var answers = [];             
+
+const quizStart = document.getElementById('quiz-btn');
+const backgroundQuestion = document.querySelector('.background-quiz');
+const quizH4 = document.getElementById('title');
+const quizH1 = document.getElementById('big-title');
+const quizH2 = document.getElementById('result');
+const quizButtons = document.querySelectorAll('.quiz-buttons');
+const question = document.getElementById('question');
+
+
+quizStart.addEventListener("click", function() {
+  if (counter === 0) {
+    this.textContent = 'Далі';    
+    backgroundQuestion.style.backgroundImage = "url('images/backgr/Group-quiz.svg')";
+    quizH4.style.display = 'none';
+    quizButtons.forEach(button => {
+      button.style.display = 'flex';
+    });
+    
+    question.textContent = counter+1 + ". " + questions[counter];
+    counter = counter + 1;
+  }
+  else if(counter === questions.length){
+    quizButtons.forEach(button => {
+      button.style.display = 'none';
+    });
+    // getBestCard();
+    question.style.display = 'none';
+    quizH1.style.display = 'none';
+    quizH2.style.display = 'block';
+
+  }
+  
+  else{    
+    var element = document.querySelector('.quiz-btn.answer');
+
+    if(element){      
+      question.textContent = counter+1 + ". " + questions[counter];
+      counter = counter + 1;      
+      if (element.id === "type1") {
+        answers.push("1");
+      }else if(element.id === "type2"){
+        answers.push("2");
+      }else if(element.id === "type3"){
+        answers.push("3");
+      }else if(element.id === "type4"){
+        answers.push("4");
+      }else if(element.id === "type5"){
+        answers.push("5");
+      }
+
+      // console.log(answers);    
+      element.classList.remove('answer');
+
+    }
+  }
+
+
+
+});
