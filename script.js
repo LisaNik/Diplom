@@ -161,8 +161,19 @@ quizBtns.forEach(quizBtn => {
 //тест
 var counter = 0;
 const questions = ["Твоя тваринка дуже активна та любить погратися."
-                            
+                ,"Ти полюбляєш великих тваринок, а не тих які поміщаються у сумочку?"
+                ,"Тобі б хотілося мати тваринку яка любить людей та дітей."
+                ,"Ти б зміг впоратися з агресивною тваринкою."
+                ,"Ти б взяв тваринку, яка має проблеми зі здоров'ям."
+                ,"Ти обожнюєш прогулянки на свіжому повітрі."
+                ,"Пухнасті тварини найкращі!"
+                ,"Ти готовий постійно гратися з тваринкою та приділяти їй увагу."
+                ,"Ти завжди мріяв про розумного чотирилапого друга."
+                ,"Ти маєш великий дім, де тваринці буде просторно."
+                ,"Тобі важливо, щоб тваринка була слухняною."
+                ,"Тобі подобається, коли тваринка любить гратися з іншими тваринками."              
               ];
+
 var answers = [];             
 
 const quizStart = document.getElementById('quiz-btn');
@@ -185,6 +196,7 @@ quizStart.addEventListener("click", function() {
     
     question.textContent = counter+1 + ". " + questions[counter];
     counter = counter + 1;
+
   }
   else if(counter === questions.length){
     quizButtons.forEach(button => {
@@ -215,7 +227,7 @@ quizStart.addEventListener("click", function() {
         answers.push("5");
       }
 
-      // console.log(answers);    
+      console.log(answers);    
       element.classList.remove('answer');
 
     }

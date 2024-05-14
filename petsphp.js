@@ -47,12 +47,6 @@ function getAllData() {
         createButton(profileCard);
     });
 
-    // //Проверка пустого div cards
-    // const element =  document.querySelector('.cards');
-
-    // if (element.classList.length == 0) {
-    //     element.innerHTML = "<h1>hello</h1>";
-    // }
 }
 
 function createProfile(data, type, size, gender, age) {

@@ -46,17 +46,7 @@ function resetActiveBtn() {
 }
 
 
-////////////////////////////////////////////LIKE
 
-// document.querySelectorAll(".like-pet").forEach(button => {
-//     button.addEventListener("click", function() {
-//         document.getElementById('likes').innerHTML = `
-//             <h1>byyyeee</h1>
-//         `;
-//         this.classList.toggle("chosen");
-        
-//     });
-// });
 
 ////////////////////Фильтр чекбокс
 
