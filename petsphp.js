@@ -1,5 +1,6 @@
 let data = [];
 let likedId =[];
+
 document.addEventListener('DOMContentLoaded', () => {
     getDataPhp();
     likedId=localStorage.getItem('likedId').split(',');
@@ -10,7 +11,6 @@ function showLikedCards(){
     const div = document.querySelector('.sidebar-cards');
     while (div.firstChild) {
         div.removeChild(div.firstChild);
-
     }
 
     data.forEach(profile => {
@@ -18,20 +18,13 @@ function showLikedCards(){
             const profileLikedCard = createLikedProfile(profile);
             createLikeButton(profileLikedCard);            
         }
-        
-        // document.querySelectorAll('cards')
-        //     .getElementById(profile.name)
-        //     .getElementsByClassName('like-pet')[0]
-        //     .classList.add('chosen');
-
     });
 }
 
 async function getDataPhp() {
-
     const res = await fetch('./profile.php');
     data = await res.json();
-    sessionStorage.setItem('petData',data);
+    // sessionStorage.setItem('petData',data);
     getAllData();
     showLikedCards();
 }
@@ -46,7 +39,6 @@ function getAllData() {
         const profileCard = createProfile(profile, PetType,selectedSize, selectedGender, selectedAge); // Pass PetType as an argument
         createButton(profileCard);
     });
-
 }
 
 function createProfile(data, type, size, gender, age) {
@@ -58,7 +50,7 @@ function createProfile(data, type, size, gender, age) {
         profileDiv.innerHTML = `
             <img src="imagesPets/${data.img}">        
             <h3>${data.name}</h3>            
-            <h4>${data.gender}, ${data.age} ${data.type}</h4>
+            <h4>${data.info}</h4>
         `;
         document.querySelector('.cards').appendChild(profileDiv);
     }
@@ -73,25 +65,25 @@ function createProfile(data, type, size, gender, age) {
     return profileDiv;
 }
 
-function getAllLikedData() {
-    const div = document.querySelector('.liked-cards');
-    while (div.firstChild) {
-        div.removeChild(div.firstChild);
-    }
+// function getAllLikedData() {
+//     const div = document.querySelector('.liked-cards');
+//     while (div.firstChild) {
+//         div.removeChild(div.firstChild);
+//     }
 
-    data.forEach(profile => {
-        const profileCard = createProfile(profile, PetType,selectedSize, selectedGender, selectedAge); // Pass PetType as an argument
-        createButton(profileCard);
-    });
+//     data.forEach(profile => {
+//         const profileCard = createProfile(profile, PetType,selectedSize, selectedGender, selectedAge); // Pass PetType as an argument
+//         createButton(profileCard);
+//     });
 
 
-    //Проверка пустого div cards
-    const element =  document.querySelector('.cards');
+//     // //Проверка пустого div cards
+//     // const element =  document.querySelector('.cards');
 
-    if (element.classList.length == 0) {
-        element.innerHTML = "<h1>hello</h1>";
-    }
-}
+//     // if (element.classList.length == 0) {
+//     //     element.innerHTML = "<h1>hello</h1>";
+//     // }
+// }
 
 function createLikedProfile(data) {
     const profileDiv = document.createElement('div');
@@ -101,7 +93,8 @@ function createLikedProfile(data) {
     profileDiv.innerHTML = `
         <img src="imagesPets/${data.img}">        
         <h3>${data.name}</h3>            
-        <h4>${data.gender}, ${data.age} ${data.type}</h4>
+        <h4>${data.info}</h4>
+
     `;
     document.querySelector('.sidebar-cards').appendChild(profileDiv);
     
@@ -117,17 +110,16 @@ function createButton(profileCard) {
     const linksDiv = document.createElement('div');
     linksDiv.classList.add('card_links');
     linksDiv.innerHTML = `    
-        <button class="button yellow-pet" onclick="location.href='petPage.html'">Усиновити</button>
+        <button class="button yellow-pet">Усиновити</button>
         <button class="like-pet">а</button>
     `;
     const likePetButton = linksDiv.querySelector('.like-pet');
+    const yellowPetButton = linksDiv.querySelector('.button.yellow-pet');
 
     if(likedId.includes(profileCard.id)){
         likePetButton.classList.add('chosen');
 
-    }; // Append the button to the profile card
-
-    
+    }; // Append the button to the profile card    
         
     likePetButton.addEventListener('click', function() {
         this.classList.toggle('chosen');
@@ -143,18 +135,22 @@ function createButton(profileCard) {
             //     `;
             
         } else {
-            const index = likedId.indexOf(parentId);
-        
+            const index = likedId.indexOf(parentId);        
             likedId.splice(index,1);
-            //     document.getElementById('likes').innerHTML = `
-            //     <h1>${likedId}</h1>
-            // `;
         }
 
         localStorage.setItem("likedId", likedId);
-
         showLikedCards();
         
+    });
+
+    yellowPetButton.addEventListener('click', function() {
+        const parentClass = this.closest('.card');
+        const parentId = parentClass.id;
+        localStorage.setItem('petPageId', parentId);
+        console.log('petPageId');
+        window.location = 'petPage.html';
+
     });
 
     profileCard.appendChild(linksDiv); // Append the button to the profile card
@@ -165,12 +161,13 @@ function createLikeButton(profileCard) {
     const linksDiv = document.createElement('div');
     linksDiv.classList.add('card_links');
     linksDiv.innerHTML = `    
-    <button class="button yellow-pet" onclick="location.href='petPage.html'">Усиновити</button>
+    <button class="button yellow-pet" >Усиновити</button>
 
         <button class="like-pet chosen">а</button>
     `;
     
     const likePetButton = linksDiv.querySelector('.like-pet');
+    const yellowPetButton = linksDiv.querySelector('.button.yellow-pet');
     
     likePetButton.addEventListener('click', function() {
 
@@ -192,6 +189,17 @@ function createLikeButton(profileCard) {
         localStorage.setItem('likedId',likedId);
         
     });
+
+    yellowPetButton.addEventListener('click', function() {
+        const parentClass = this.closest('.liked-card');
+        const parentId = parentClass.id;
+        localStorage.setItem('petPageId', parentId);
+        console.log('petPageId');
+        window.location = 'petPage.html';
+
+    });
+
+
     profileCard.appendChild(linksDiv); // Append the button to the profile card
 }
 
@@ -199,30 +207,31 @@ function createLikeButton(profileCard) {
 document.querySelectorAll(".button.yellow-pet").addEventListener('click', function() {
     const parentClass = this.closest('.liked-card');
         const parentId = parentClass.id;
+        const card = this.closest('.card');
+        
+     
 });
 
-function goToPetPage(){
 
-}
+// document.querySelectorAll("div.card button.button.yellow-pet").forEach(button => {
+//     button.addEventListener('click', function() {
+//         console.log("test1");
 
-// function adoptPet(id) {
-//     // Определите, какую страницу усыновления открывать в зависимости от ID
-//     let page = '';
-//     switch (id) {
-//         case 'Скрудж':
-//             page = 'petPage1.html';
-//             break;
-//         case '2':
-//             page = 'adopt_dog.html';
-//             break;
-//         // Добавьте другие варианты для разных животных, если необходимо
-//         default:
-//             page = 'adopt_default.html'; // Страница по умолчанию или обработка ошибки
-//             break;
-//     }
+//         // // Найти ближайший родительский элемент с классом 'card'
+//         const card = this.closest('.card');
+//         console.log(card);        
+//     });
+// });
 
-//     // Перенаправляем пользователя на соответствующую страницу
-//     window.location.href = page;
-// }
+// document.querySelectorAll("div.liked-card button.button.yellow-pet").forEach(button => {
+//     button.addEventListener('click', function() {
+//         console.log("test2");
+
+//         // Найти ближайший родительский элемент с классом 'liked-card'
+//         const likedCard = this.closest('.liked-card');
+//         console.log(likedCard);
+
+//     });
+// });
 
 

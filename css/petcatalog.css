@@ -233,12 +233,13 @@
 
 
 .yellow-pet {
-    width: 188px;
+    width: 184px;
     height: 54px;
     margin: auto;
     background-color: #FFDC26;
     color: #262626;
     font-weight: 500;
+    margin-right: 8px;
 }
     .yellow-pet:hover {
         transition: all 0.3s ease 0s;

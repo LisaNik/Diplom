@@ -1,5 +1,5 @@
 <?php
-$dbc = mysqli_connect('localhost', 'root', '', 'duckburg');
+$dbc = mysqli_connect('localhost', 'root', '', 'petsite');
 
 $query = "SELECT * FROM parameters";
 $result = mysqli_query($dbc, $query) or die(mysqli_error());

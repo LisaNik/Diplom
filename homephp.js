@@ -1,7 +1,6 @@
 let parameters = [];
 
-document.addEventListener('DOMContentLoaded', () => {
-    
+document.addEventListener('DOMContentLoaded', () => {    
     getDataPhp();
 });
 
@@ -58,7 +57,7 @@ function showBestCard(minName){
     profileDiv.innerHTML = `
         <img src="imagesPets/${bestCard.img}">        
         <h3>${bestCard.name}</h3>            
-        <h4>${bestCard.gender}, ${bestCard.age} ${bestCard.type}</h4>
+        <h4>${bestCard.info}</h4>
     `;
     document.querySelector('.best-cards').appendChild(profileDiv);
     
@@ -67,9 +66,55 @@ function showBestCard(minName){
      // Apply fade-in animation by changing opacity
      profileDiv.style.opacity = '1'; 
     // return profileDiv;
-    createButton(profileDiv);
+    createBestButton(profileDiv);
 }
 
 
 
+function createBestButton(profileCard) {
+    const linksDiv = document.createElement('div');
+    linksDiv.classList.add('card_links');
+    linksDiv.innerHTML = `    
+        <button class="button yellow-pet">Усиновити</button>
+        <button class="like-pet">а</button>
+    `;
+    const likePetButton = linksDiv.querySelector('.like-pet');
+    const yellowPetButton = linksDiv.querySelector('.button.yellow-pet');
+
+    if(likedId.includes(profileCard.id)){
+        likePetButton.classList.add('chosen');
+
+    }; // Append the button to the profile card    
+        
+    likePetButton.addEventListener('click', function() {
+        this.classList.toggle('chosen');
+
+        const parentClass = this.closest('.best-card');
+        const parentId = parentClass.id;
+        
+        if (this.classList.contains('chosen')) {
+            
+            likedId.push(parentId);
+            
+        } else {
+            const index = likedId.indexOf(parentId);        
+            likedId.splice(index,1);
+        }
+
+        localStorage.setItem("likedId", likedId);
+        showLikedCards();
+        
+    });
+
+    yellowPetButton.addEventListener('click', function() {
+        const parentClass = this.closest('.best-card');
+        const parentId = parentClass.id;
+        localStorage.setItem('petPageId', parentId);
+        console.log('petPageId');
+        window.location = 'petPage.html';
+
+    });
+
+    profileCard.appendChild(linksDiv); // Append the button to the profile card
+}
 

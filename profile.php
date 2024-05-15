@@ -1,5 +1,5 @@
 <?php
-$dbc = mysqli_connect('localhost', 'root', '', 'duckburg');
+$dbc = mysqli_connect('localhost', 'root', '', 'petsite');
 
 $query = "SELECT * FROM profile ORDER BY RAND()";
 $result = mysqli_query($dbc, $query) or die(mysqli_error());
@@ -14,6 +14,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         'gender' => $row['gender'],
         'age' => $row['age'],
         'type' => $row['type'],
+        'about' => $row['about'],
         'img' => $row['img'],
     );
 }

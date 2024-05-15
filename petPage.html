@@ -5,6 +5,7 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/petcatalog.css">
     <link rel="stylesheet" href="css/petpage.css">
     <link rel="stylesheet" href="css/footer.css">
     <title></title>
@@ -12,25 +13,25 @@
 <body>
 <header id="site-header">
     <a href="home.html">
-        <img class="logo" src="images/Group.svg" alt="logo"/>
+        <img alt="logo" class="logo" src="images/Group.svg"/>
     </a>
     <nav>
         <ul class="nav_links">
-            <li><a href="#">Про нас</a></li>
-            <li><a href="#">Статистика</a></li>
-            <li><a href="#">Допомога</a></li>
-            <li><a href="#">Каталог</a></li>
+            <li><a href="home.html#about">Про нас</a></li>
+            <li><a href="home.html#analysis">Статистика</a></li>
+            <li><a href="home.html#donations">Допомога</a></li>
+            <li><a href="home.html#catalog">Каталог</a></li>
         </ul>
     </nav>
-    <but>
-        <button class="button like">а</button>
+    <div>
+            <button class="button-like">а</button>
         <a class="cta" href="#">
             <button class="button transparent">Задонатити</button>
         </a>
-        <a class="cta" href="pets.html">
-            <button class="button yellow">Знайти друга</button>
+        <a class="cta" href="pets.html?id=all">
+            <button class="button yellow" id="all">Знайти друга</button>
         </a>
-    </but>
+    </div>
 </header>
 
 <section class="animals" id="about">
@@ -41,7 +42,7 @@
             <div class="background-pet">
                 <div class="donat-content">
                     <div class="image">
-                        <img src="./profile/b1.png" alt="image"/>
+                        <img class="image-pet" alt="image"/>
                     </div>
                 </div>
 
@@ -49,43 +50,25 @@
                     <div class="inform">
                         <div class="title-pet">
 
-                            <h1 class="info-name">Аврора</h1>
-                            <div class="info-btn">
-                                <a class="cta" href="#">
-                                    <button class="button like-pet">а</button>
-                                </a>
-                                <a class="cta" href="#">
-                                    <button class="button yellow-pet" onclick="showModal()">Усиновити</button>
-                                </a>
-
+                            <h1 class="info-name"></h1>
+                            <div class="card__links">                                
+                                <button class="button like-pet">а</button>
+                                    <button class="button yellow-pet" onclick="showModal()">Усиновити</button>                                    
                             </div>
                         </div>
                         <div class="title">
-                            <h4 class="features-pet">дівчинка, 1 рік</h4>
+                            <h4 class="features-pet"></h4>
                         </div>
                         <div class="title">
-
                             <h3 class="name-pet">Про тваринку:</h3>
                         </div>
                         <div class="title">
-
-                            <p class="discr">
-                                Аврора - це прекрасна білочка, яка шукає новий дім та люблячих власників. Вона дуже
-                                жвава і активна тваринка, яка обожнює гратися. Аврора добре ладнає з іншими тваринами та
-                                дітьми.
-                                Подаруйте цій чарівній білочці щасливе життя та станьте її надійними друзями. Аврора
-                                добре ладнає з іншими тваринами та дітьми. Подаруйте цій чарівній білочці щасливе життя
-                                та станьте її надійними друзями.
-                                Аврора має неймовірно м'яку, пухнасте хутро та великі цікаві очі, які завжди виражають
-                                радість і любов. Вона вміє дарувати безмежну теплоту своїм власникам і завжди готова
-                                бути на підтримку.
-                                Її жвавість та доброзичливий характер створюють з нею ідеального компаньйона для
-                                активних сімей та тих, хто цінує тепло і вірного друга на кожен день.
-                            </p>
+                            <p class="discr"></p>
+                        </div>                        
+                        <div class="title">
+                            <p class="discr"></p>
                         </div>
-
                     </div>
-
                 </div>
             </div>
 </section>
@@ -148,7 +131,7 @@
 
             </div>
             <div class="more">
-                <a class="cta" href="pets.html">
+                <a class="cta" href="pets.html?id=all">
                     <button class="button transparent">Показати ще</button>
                 </a>
             </div>
@@ -244,15 +227,15 @@
                     <label for="remember-me">Remember me</label>
                 </div>
             </div>
-            <button class="button">Усиновити тваринку</button>
+            <button class="button" onclick="hideModal()">Усиновити тваринку</button>
         </div>
     </div>
 </div>
 
-<script src="script.js"></script>
-<script src="petscript.js"></script>
+<script src="pagePetScript.js"></script>
 
-<script src="petsphp.js"></script>
-<script src="homephp.js"></script>
+<!-- 
+<script src="petsphp.js"></script> -->
+<!-- <script src="homephp.js"></script> -->
 </body>
 </html>
