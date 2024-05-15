@@ -77,12 +77,12 @@ function createProfile(data, type, size, gender, age) {
 //     });
 
 
-//     // //Проверка пустого div cards
-//     // const element =  document.querySelector('.cards');
+//     //Проверка пустого div cards
+//     const element =  document.querySelector('.cards');
 
-//     // if (element.classList.length == 0) {
-//     //     element.innerHTML = "<h1>hello</h1>";
-//     // }
+//     if (element.classList.length == 0) {
+//         element.innerHTML = "<h1>hello</h1>";
+//     }
 // }
 
 function createLikedProfile(data) {
@@ -195,8 +195,6 @@ function createLikeButton(profileCard) {
         const parentId = parentClass.id;
         localStorage.setItem('petPageId', parentId);
         console.log('petPageId');
-        window.location = 'petPage.html';
-
     });
 
 
