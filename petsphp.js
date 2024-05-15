@@ -31,7 +31,7 @@ async function getDataPhp() {
 
     const res = await fetch('./profile.php');
     data = await res.json();
-    
+    sessionStorage.setItem('petData',data);
     getAllData();
     showLikedCards();
 }
@@ -117,7 +117,7 @@ function createButton(profileCard) {
     const linksDiv = document.createElement('div');
     linksDiv.classList.add('card_links');
     linksDiv.innerHTML = `    
-        <button class="button yellow-pet" onclick="showModal()">Усиновити</button>
+        <button class="button yellow-pet" onclick="location.href='petPage.html'">Усиновити</button>
         <button class="like-pet">а</button>
     `;
     const likePetButton = linksDiv.querySelector('.like-pet');
@@ -165,7 +165,8 @@ function createLikeButton(profileCard) {
     const linksDiv = document.createElement('div');
     linksDiv.classList.add('card_links');
     linksDiv.innerHTML = `    
-        <button class="button yellow-pet" onclick="showModal()">Усиновити</button>
+    <button class="button yellow-pet" onclick="location.href='petPage.html'">Усиновити</button>
+
         <button class="like-pet chosen">а</button>
     `;
     
@@ -195,24 +196,33 @@ function createLikeButton(profileCard) {
 }
 
 
-function adoptPet(id) {
-    // Определите, какую страницу усыновления открывать в зависимости от ID
-    let page = '';
-    switch (id) {
-        case 'Скрудж':
-            page = 'petPage1.html';
-            break;
-        case '2':
-            page = 'adopt_dog.html';
-            break;
-        // Добавьте другие варианты для разных животных, если необходимо
-        default:
-            page = 'adopt_default.html'; // Страница по умолчанию или обработка ошибки
-            break;
-    }
+document.querySelectorAll(".button.yellow-pet").addEventListener('click', function() {
+    const parentClass = this.closest('.liked-card');
+        const parentId = parentClass.id;
+});
 
-    // Перенаправляем пользователя на соответствующую страницу
-    window.location.href = page;
+function goToPetPage(){
+
 }
+
+// function adoptPet(id) {
+//     // Определите, какую страницу усыновления открывать в зависимости от ID
+//     let page = '';
+//     switch (id) {
+//         case 'Скрудж':
+//             page = 'petPage1.html';
+//             break;
+//         case '2':
+//             page = 'adopt_dog.html';
+//             break;
+//         // Добавьте другие варианты для разных животных, если необходимо
+//         default:
+//             page = 'adopt_default.html'; // Страница по умолчанию или обработка ошибки
+//             break;
+//     }
+
+//     // Перенаправляем пользователя на соответствующую страницу
+//     window.location.href = page;
+// }
 
 

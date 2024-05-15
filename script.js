@@ -146,18 +146,6 @@ quizBtns.forEach(quizBtn => {
 });
 
 
-// function getBestCard() {
-//   const div = document.querySelector('.cards');
-
-//   data.forEach(profile => {
-
-//       if(profile.id === '1'){
-//           const profileCard = createProfile(profile); // Pass PetType as an argument
-//           createButton(profileCard);
-//       }
-//   });
-// }
-
 //тест
 var counter = 0;
 const questions = ["Твоя тваринка дуже активна та любить погратися."
@@ -171,7 +159,7 @@ const questions = ["Твоя тваринка дуже активна та лю�
                 ,"Ти завжди мріяв про розумного чотирилапого друга."
                 ,"Ти маєш великий дім, де тваринці буде просторно."
                 ,"Тобі важливо, щоб тваринка була слухняною."
-                ,"Тобі подобається, коли тваринка любить гратися з іншими тваринками."              
+                ,"Тобі подобається, коли тваринка грається з іншими тваринками."              
               ];
 
 var answers = [];             
@@ -198,16 +186,6 @@ quizStart.addEventListener("click", function() {
     counter = counter + 1;
 
   }
-  else if(counter === questions.length){
-    quizButtons.forEach(button => {
-      button.style.display = 'none';
-    });
-    // getBestCard();
-    question.style.display = 'none';
-    quizH1.style.display = 'none';
-    quizH2.style.display = 'block';
-
-  }
   
   else{    
     var element = document.querySelector('.quiz-btn.answer');
@@ -216,20 +194,41 @@ quizStart.addEventListener("click", function() {
       question.textContent = counter+1 + ". " + questions[counter];
       counter = counter + 1;      
       if (element.id === "type1") {
-        answers.push("1");
+        answers.push(1);
       }else if(element.id === "type2"){
-        answers.push("2");
+        answers.push(2);
       }else if(element.id === "type3"){
-        answers.push("3");
+        answers.push(3);
       }else if(element.id === "type4"){
-        answers.push("4");
+        answers.push(4);
       }else if(element.id === "type5"){
-        answers.push("5");
+        answers.push(5);
       }
 
       console.log(answers);    
       element.classList.remove('answer');
 
+      
+      if(counter === questions.length){
+      this.textContent = 'Показати результат';  }
+
+
+      if(counter === questions.length+1){
+        
+        quizButtons.forEach(button => {
+          button.style.display = 'none';
+        });
+        
+    getParamPhp(answers);
+        quizStart.style.display = 'none';
+        question.style.display = 'none';
+        quizH1.style.display = 'none';
+        quizH2.style.display = 'block';   
+        
+                
+
+
+      }
     }
   }
 
