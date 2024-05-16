@@ -48,3 +48,23 @@ async function sendForm(data){
         alert('Упс, щось пішло не так.');
     }
 }
+
+const showModal = (modalId) => {
+    const modal = document.getElementById(modalId)
+  
+    modal.classList.add('visible')
+  }
+  
+  const hideModal = (modalId) => {
+    const modal = document.getElementById(modalId);  
+    modal.classList.remove('visible');
+
+    document.querySelectorAll('input').forEach(input => {
+      input.value = ''; // Очищаем содержимое каждого поля ввода
+  });
+    document.querySelectorAll('textarea').forEach(textarea => {
+      textarea.value = ''; // Очищаем содержимое каждого поля ввода
+  });
+
+  document.querySelector('.form-text').classList.remove('textarea-has-content');
+  }

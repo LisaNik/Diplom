@@ -28,9 +28,7 @@
     </nav>
     <div>
             <button class="button-like" id="home-like-btn">а</button>
-        <a class="cta" href="#">
-            <button class="button transparent">Задонатити</button>
-        </a>
+            <button class="button transparent" onclick="showModal('donation')">Задонатити</button>
         <a class="cta" href="pets.html?id=all">
             <button class="button yellow" id="all">Знайти друга</button>
         </a>
@@ -163,9 +161,7 @@
                             <button class="button transparent-donat">Інша сума</button>
                     </div>
 
-                    <a class="cta" href="#">
-                        <button class="button yellow-donat">Задонатити</button>
-                    </a>
+                        <button class="button yellow-donat" onclick="showModal('donation')">Задонатити</button>
                 </div>
 
             </div>
@@ -287,7 +283,7 @@
     <div class="game-screen" id="gameScreen3">
         <div class="game-result" id="game-result">
             <div class="game-result-actions">
-                <button class="button yellow" onclick="showModal()">Усиновити</button>
+                <button class="button yellow" onclick="showModal('modal')">Усиновити</button>
                 <a class="cta" href="#">
                     <button class="button like">а</button>
                 </a>
@@ -340,7 +336,7 @@
                     </ul>
                 </nav>
                 <div>
-                    <a class="cta" href="pets.html">
+                    <a class="cta" href="pets.html?id=all">
                         <button class="button transparent-footer">Знайти друга</button>
                     </a>
                 </div>
@@ -380,7 +376,7 @@
     <div class="form-wrapper">
         <div class="form-title">
             <h2>Зв’яжись з нами</h2>
-            <button class="button x-button" onclick="hideModal()">а</button>
+            <button class="button x-button" onclick="hideModal('modal')">а</button>
         </div>
         <div class="form">
             <div class="inputs">
@@ -425,12 +421,53 @@
     </div>
 </div>
 
+<div class="modal" id="donation">
+    <div class="modal-backdrop"></div>
+    <div class="form-wrapper">
+        <div class="form-title">
+            <h2>Вкажи свої дані</h2>
+            <button class="button x-button" onclick="hideModal('donation')">а</button>
+        </div>
+        <div class="form">
+            <div class="inputs">
+                <div class="form-control">
+                    <input type="text" id="name" required>
+                    <label>*Твоє ім’я</label>
+                </div>
+                <div class="form-control">
+                    <input type="text" id="surname" required>
+                    <label>*Твое прізвище</label>
+                </div>
+                <div class="form-control">
+                    <input type="text" id="phone" required>
+                    <label>*Номер телефону</label>
+                </div>
+                <div class="form-control">
+                    <input type="text" id="email" required>
+                    <label>*Твій E-mail</label>
+                </div>
+            </div>
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="conditions">
+                    <label for="conditions">Я ознайомився/лась з Публічною офертою щодо надання 
+                        благодійної пожертви та погоджуюся з тим, що введена мною особиста інформація 
+                        буде використана згідно з Політикою приватності Вебсайту.</label>
+                </div>
+            </div>
+            <button class="button" id="send" onclick="hideModal('donation')">Перейти до оплати</button>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<script src="modal.js"></script>
 <script src="script.js"></script>
 <script src="petscript.js"></script>
 <script src="petsphp.js"></script>
 <script src="homephp.js"></script>
 <script src="game.js"></script>
+
 </body>
 </html>

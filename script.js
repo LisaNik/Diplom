@@ -80,19 +80,6 @@ donatBtns.forEach(donatBtn => {
 });
 
 
-const showModal = () => {
-  const modal = document.getElementById('modal')
-
-  modal.classList.add('visible')
-}
-
-const hideModal = () => {
-  const modal = document.getElementById('modal')
-
-  modal.classList.remove('visible')
-}
-
-
      ///////////////////////////////////
  //CHOSE DONATION
 document.addEventListener("DOMContentLoaded", function () {
