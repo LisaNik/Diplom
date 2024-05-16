@@ -71,27 +71,39 @@
     margin-bottom: 90px;
 }
 
+
+.form-control input, .form-text textarea {
+    background-color: transparent;
+    border-radius: 32px;
+    border: 1px solid white;
+    font-size: 1rem;    
+    font-family: 'Geologica', sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    color: #FFDC26;
+}
+
 .form-control input {
     height: 54px;
     width: 292px;
-    background-color: transparent;
-    border-radius: 32px;
-    border: 1px solid white;
-    font-size: 1rem;
     padding: 0 20px;
 }
 
-.form-text input {
+.form-text textarea {
     height: 120px;
     width: 100%;
-    background-color: transparent;
-    border-radius: 32px;
-    border: 1px solid white;
-    font-size: 1rem;
-    padding: 0 20px;
+    padding: 20px 20px;
+    resize: none;
+    box-sizing: border-box;        
+}
+
+.form-text textarea:is(:focus, :valid) {
+    outline: none; /* Убираем внешнее обрамление при фокусе */
+
 }
 
 .form-control input:is(:focus, :valid) {
+    outline: none; /* Убираем внешнее обрамление при фокусе */
     padding: 16px 20px 0;
 }
 
@@ -103,7 +115,16 @@
     font-size: 1rem;
     pointer-events: none;
     color: white;
+    opacity: 1;
     transition: all 0.1s ease;
+}
+
+.form-text textarea:is(:focus) ~ label {
+    display: none;
+}
+.form-text.textarea-has-content label {
+    display: none;
+
 }
 
 .inputs {
@@ -117,9 +138,6 @@
     transform: translateY(-130%);
 }
 
-.form-text input:is(:focus, :valid) ~ label {
-    display: none;
-}
 
 .form-control input:is(:focus, :valid) {
     border: 1px solid white;

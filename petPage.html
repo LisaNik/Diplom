@@ -159,6 +159,56 @@
         <div class="form">
             <div class="inputs">
                 <div class="form-control">
+                    <input type="text" id="name" required>
+                    <label>*Твоє ім’я</label>
+                </div>
+                <div class="form-control">
+                    <input type="text" id="surname" required>
+                    <label>*Твое прізвище</label>
+                </div>
+                <div class="form-control">
+                    <input type="text" id="phone" required>
+                    <label>*Номер телефону</label>
+                </div>
+                <div class="form-control">
+                    <input type="text" id="email" required>
+                    <label>*Твій E-mail</label>
+                </div>
+            </div>
+            <div class="form-text">
+                <textarea id="comment"></textarea>
+                <label id="comment-lable">Залиши коментар</label>    
+            </div>
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="conditions">
+                    <label for="conditions">Я ознайомився/лась з Умовами використання сайту та погоджуюся з тим, що
+                        введена
+                        мною особиста інформація буде використана згідно з Політикою приватності Притулку.</label>
+                </div>
+            </div>
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+            </div>
+            <button class="button" id="send">Усиновити тваринку</button>
+        </div>
+    </div>
+</div>
+
+<!-- old -->
+<!-- <div class="modal" id="modal">
+    <div class="modal-backdrop"></div>
+    <div class="form-wrapper">
+        <div class="form-title">
+            <h2>Зв’яжись з нами</h2>
+            <button class="button x-button" onclick="hideModal()">а</button>
+        </div>
+        <div class="form">
+            <div class="inputs">
+                <div class="form-control">
                     <input type="text" required>
                     <label>*Твоє ім’я</label>
                 </div>
@@ -197,9 +247,10 @@
             <button class="button" onclick="hideModal()">Усиновити тваринку</button>
         </div>
     </div>
-</div>
+</div> -->
 
-<script src="pagePetScript.js"></script>
+    <script src="modal.js"></script>
+    <script src="pagePetScript.js"></script>
 
 <!-- 
 <script src="petsphp.js"></script> -->
