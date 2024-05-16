@@ -273,6 +273,41 @@
 }
 
 
+
+
+.card img{
+
+    width: 250px;
+    height: 272px;
+    border-radius: 32px;
+}
+
+.liked-card h3{
+    
+    font-family: cocon;
+    font-weight: 300;
+    font-size: 24px;
+    margin-top: 0px;
+    line-height: 100%; /*Интерлиньяж (расстояние между строк)*/
+    margin-top:16px;
+    color:white;
+}
+
+.liked-card h4{
+    font-family: 'Geologica', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    opacity:60%;
+    color:white;
+    margin-bottom:3px;
+}
+
+
+.card, .liked-card  {
+    opacity: 0; /* Initially hide the card */
+    transition: opacity 0.6s ease-in-out; /* Smooth transition for opacity */
+}
+
 .card__descr-wrapper {
     display: grid;
 }

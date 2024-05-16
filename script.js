@@ -1,3 +1,4 @@
+//header
 (function () {
   var doc = document.documentElement;
   var w = window;
@@ -129,7 +130,6 @@ $(document).ready(function() {
 
 
 //quizzzz
-
 const quizBtns = document.querySelectorAll(".quiz-btn");
 
 quizBtns.forEach(quizBtn => {
@@ -224,14 +224,8 @@ quizStart.addEventListener("click", function() {
         question.style.display = 'none';
         quizH1.style.display = 'none';
         quizH2.style.display = 'block';   
-        
-                
-
-
+  
       }
     }
   }
-
-
-
 });

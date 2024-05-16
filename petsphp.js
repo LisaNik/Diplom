@@ -195,6 +195,8 @@ function createLikeButton(profileCard) {
         const parentId = parentClass.id;
         localStorage.setItem('petPageId', parentId);
         console.log('petPageId');
+        window.location = 'petPage.html';
+
     });
 
 
@@ -207,7 +209,6 @@ document.querySelectorAll(".button.yellow-pet").addEventListener('click', functi
         const parentId = parentClass.id;
         const card = this.closest('.card');
         
-     
 });
 
 

@@ -193,12 +193,40 @@
     background-color: #FFDC26;
     color: #262626;
     font-weight: 500;
+    margin-right: 4px;
 }
     .yellow-pet:hover {
         transition: all 0.3s ease 0s;
         background-color: #FFFFFF;
         color: #262626;
     }
+.like-pet {
+    width: 54px;
+    height: 54px;
+    margin-left: 0px;
+    background-color: #7C9DF8;
+    border: none;
+    color: transparent;
+    background-image: url('../images/likes.svg');
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+button{
+    cursor: pointer;
+}
+.chosen {
+    background-image: url('../images/likeschosen.svg');
+}
+
+.like-pet:hover {
+    background-image: url('../images/likehover.svg');
+}
+
+.chosen:hover {
+    background-image: url('../images/likeschosen.svg');
+}
+
+
 .like-pet {
     width: 54px;
     height: 54px;

@@ -425,3 +425,163 @@ p {
     }
 
     
+
+
+
+/* sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -676px; /* Положение панели по умолчанию */
+    width: 676px;
+    position: fixed;
+    background-color: #5B85F6;
+    transition: right 0.5s ease; /* Анимация при изменении положения */
+    border-radius: 32px 0px 0px 32px;
+    z-index: 9990; /* Убедитесь, что кнопка находится поверх всего остального */
+    padding: 22px 48px 0px 48px;    
+    height: 100vh;
+    overflow-y: scroll; /* Включаем вертикальную полосу прокрутки */
+    -ms-overflow-style: none;  /* Устанавливаем стиль прокрутки для IE/Edge */
+    scrollbar-width: none; /* Устанавливаем стиль прокрутки для Firefox */
+}
+
+.sidebar.active {
+    right: 0; /* Показываем боковую панель */
+}
+.sidebar::-webkit-scrollbar {
+    width: 0;  /* Устанавливаем нулевую ширину для полосы прокрутки */
+    background-color: transparent; /* Делаем фон полосы прозрачным */
+}
+
+.black-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9990;
+    background: #000c;
+    transition: all 0.5s ease; /* Анимация при изменении положения */
+    opacity: 0; /* Скрываем элемент с помощью нулевой прозрачности */
+    pointer-events: none; /* Элемент будет проигнорирован событиями мыши */
+}
+
+.black-back.visible {
+    opacity: 1; /* Показываем элемент с помощью полной прозрачности */
+    pointer-events: auto; /* Включаем обработку событий мыши */
+}
+
+.sidebar-wrapper {
+    padding: 0px;
+    background: #5B85F6;
+    width: auto;
+    height: fit-content;
+}
+
+.sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    align-items: center;
+}
+
+.sidebar-wrapper h2 {
+    color: white;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+
+.sidebar-cards {
+    display: grid;
+    grid-template-columns: 282px 282px;
+    grid-gap: 16px;
+    margin-top: 0px;
+    padding-bottom: 24px;
+}
+
+.liked-card {
+    width: 282px;
+    height: 440px;
+    border-radius: 32px;
+    background: #7C9DF8;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 16px;
+    text-align: start;
+}
+
+.card__img {
+    width: 250px;
+    height: 272px;
+    border-radius: 32px;
+}
+
+.card__descr-wrapper {
+    display: grid;
+}
+
+
+.card__descr {
+    margin-top: 0px;
+    line-height: 100%;
+}
+
+
+.card__links {
+    display: flex;
+    justify-content: space-between;
+    width:250px;
+}
+
+.card img{
+
+    width: 250px;
+    height: 272px;
+    border-radius: 32px;
+}
+
+.liked-card h3{
+    
+    font-family: cocon;
+    font-weight: 300;
+    font-size: 24px;
+    margin-top: 0px;
+    line-height: 100%; /*Интерлиньяж (расстояние между строк)*/
+    margin-top:16px;
+    color:white;
+}
+
+.liked-card h4{
+    font-family: 'Geologica', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    opacity:60%;
+    color:white;
+    margin-bottom:3px;
+}
+
+
+.liked-card  {
+    opacity: 0; /* Initially hide the card */
+    transition: opacity 0.6s ease-in-out; /* Smooth transition for opacity */
+}
+
+.card__descr-wrapper {
+    display: grid;
+}
+
+
+.card__descr {
+    margin-top: 0px;
+    line-height: 100%;
+}
+
+
+.card__links {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+}

@@ -178,9 +178,6 @@ function handleSearchButtonClick() {
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", handleSearchButtonClick);
 
-
-
-
 const likeButtons = document.querySelectorAll(".button-like");
 
 // Перебираем каждый элемент коллекции и добавляем обработчик событий
