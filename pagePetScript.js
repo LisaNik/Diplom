@@ -21,9 +21,98 @@ async function getDataPhp() {
     data = await res.json();
     // sessionStorage.setItem('petData',data);
     // console.log(petProfile);
-
     getPetData();
+    getAllData()
 }
+
+function getAllData() {
+
+  let numberOfCards = 0;
+
+  
+    data.forEach(profile => {
+      if(numberOfCards < 4 && profile.name !== petName){
+      const profileCard = createProfile(profile); // Pass PetType as an argument
+      createButton(profileCard);
+      numberOfCards = numberOfCards+1;      
+  }  
+  });  
+}
+
+function createProfile(data) {
+  const profileDiv = document.createElement('div');
+  profileDiv.classList.add('card');
+  
+  profileDiv.id = data.name;
+  profileDiv.innerHTML = `
+      <img src="imagesPets/${data.img}">        
+      <h3>${data.name}</h3>            
+      <h4>${data.info}</h4>
+
+  `;
+  document.querySelector('.cards').appendChild(profileDiv);
+  
+   // Trigger reflow to restart the transition
+   profileDiv.offsetHeight;
+   // Apply fade-in animation by changing opacity
+   profileDiv.style.opacity = '1'; 
+  return profileDiv;
+}
+
+function createButton(profileCard) {
+  const linksDiv = document.createElement('div');
+  linksDiv.classList.add('card_links');
+  linksDiv.innerHTML = `    
+  <button class="button yellow-pet" >Усиновити</button>
+    <button class="like-pet">а</button>
+  `;
+  
+  const likePetButton = linksDiv.querySelector('.like-pet');
+  const yellowPetButton = linksDiv.querySelector('.button.yellow-pet');
+
+  if(likedId.includes(profileCard.id)){
+    likePetButton.classList.add('chosen');
+
+}; 
+  
+  likePetButton.addEventListener('click', function() {
+
+    this.classList.toggle('chosen');
+
+    const parentClass = this.closest('.card');
+    const parentId = parentClass.id;
+    
+    if (this.classList.contains('chosen')) {
+        
+        likedId.push(parentId);
+        // document.getElementById('likes').innerHTML = `
+        //         <h1>${data}</h1>
+        //     `;
+        
+    } else {
+        const index = likedId.indexOf(parentId);        
+        likedId.splice(index,1);
+    }
+
+        localStorage.setItem("likedId", likedId);
+        showLikedPetCards();   
+  });
+  
+  yellowPetButton.addEventListener('click', function() {
+    const parentClass = this.closest('.card');
+    const parentId = parentClass.id;
+    localStorage.setItem('petPageId', parentId);
+    window.location = 'petPage.html';
+    // console.log('petPageId');
+  });
+  
+  profileCard.appendChild(linksDiv); // Append the button to the profile card
+  }
+  
+
+
+
+
 
 
 function getPetData(){    
@@ -49,27 +138,27 @@ function getPetData(){
 
 const likePetButton = document.querySelector('.like-pet');
     
-    likePetButton.addEventListener('click', function() {
-              
-      likePetButton.classList.toggle('chosen');
+likePetButton.addEventListener('click', function() {
+          
+  likePetButton.classList.toggle('chosen');
 
-      if (this.classList.contains('chosen')) {            
-        likedId.push(petName);        
+  if (this.classList.contains('chosen')) {            
+    likedId.push(petName);        
 
-        // document.getElementById('likes').innerHTML = `
-        //         <h1>${data}</h1>
-        //     `;
-        
-    } else {
-        const index = likedId.indexOf(petName); 
-        likedId.splice(index,1);
-    }
+    // document.getElementById('likes').innerHTML = `
+    //         <h1>${data}</h1>
+    //     `;
     
-    localStorage.setItem('likedId',likedId);
-    
-    console.log(localStorage.getItem('likedId'));
+} else {
+    const index = likedId.indexOf(petName); 
+    likedId.splice(index,1);
+}
 
-    });
+localStorage.setItem('likedId',likedId);
+
+console.log(localStorage.getItem('likedId'));
+
+});
 
 
 (function () {
@@ -166,6 +255,8 @@ data.forEach(profile => {
 });
 }
 
+
+
 function createLikePetButton(profileCard) {
 const linksDiv = document.createElement('div');
 linksDiv.classList.add('card_links');
@@ -182,23 +273,26 @@ likePetButton.addEventListener('click', function() {
   const parentClass = this.closest('.liked-card');
   const parentId = parentClass.id;
 
-  //Ищем лайкнутую кнопку в классе card
-  // const cardId = document.querySelector(`.liked-card#${parentId}`);
+  // Ищем лайкнутую кнопку в классе card
+  const cardId = document.querySelector(`.card#${parentId}`);
 
-  //     // Находим кнопку "like-pet" внутри элемента "card"
-  // const likeCardButton = cardId.querySelector('.like-pet');
-  //     // Применяем toggle к классу "chosen" кнопки "like-pet"
-  // likeCardButton.classList.toggle('chosen');
+  if(cardId){
+    // Находим кнопку "like-pet" внутри элемента "card"
+    const likeCardButton = cardId.querySelector('.like-pet');
+    // Применяем toggle к классу "chosen" кнопки "like-pet"
+    likeCardButton.classList.toggle('chosen');
+  }
 
   likePetButton.classList.toggle('chosen');
-
-              
+  //прибрати лайк з профілю
+  document.getElementById('profile-like').classList.toggle('chosen');
+  
+  //прибираєм карточку зі списку лайкнутих            
   const index = likedId.indexOf(parentId);
   likedId.splice(index,1);
   
   showLikedPetCards();
   localStorage.setItem('likedId',likedId);
-  
 });
 
 yellowPetButton.addEventListener('click', function() {

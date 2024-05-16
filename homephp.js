@@ -167,31 +167,33 @@ document.addEventListener('DOMContentLoaded', () => {
     
     likePetButton.addEventListener('click', function() {
 
+        //Знайти id лайкнутої картки
         const parentClass = this.closest('.liked-card');
         const parentId = parentClass.id;
 
-        //Ищем лайкнутую кнопку в классе card
-        const cardId = document.querySelector(`.liked-card#${parentId}`);
+        //Прибрати лайк з кращої картки з таким id, як і у лайкнутої
+        const cardId = document.querySelector(`.best-card#${parentId}`);
+        if(cardId){
+            const likeCardButton = cardId.querySelector('.like-pet');
+            likeCardButton.classList.toggle('chosen');
+        }
 
-            // Находим кнопку "like-pet" внутри элемента "card"
-        const likeCardButton = cardId.querySelector('.like-pet');
-            // Применяем toggle к классу "chosen" кнопки "like-pet"
-        likeCardButton.classList.toggle('chosen');
-                    
+        //Прибрати картку з масиву з лайкнутими картками            
         const index = likedId.indexOf(parentId);
         likedId.splice(index,1);
         
+        //Показати на sidebar лайкнуті картки
         showLikedCards();
-        localStorage.setItem('likedId',likedId);
-        
+        localStorage.setItem('likedId',likedId);        
     });
 
     yellowPetButton.addEventListener('click', function() {
+
+        //Перехід на сторінку тварини по клікнутій карці
         const parentClass = this.closest('.liked-card');
         const parentId = parentClass.id;
         localStorage.setItem('petPageId', parentId);
         window.location = 'petPage.html';
-        // console.log('petPageId');
     });
 
 
