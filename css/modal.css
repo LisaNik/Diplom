@@ -92,7 +92,7 @@
 .form-text textarea {
     height: 120px;
     width: 100%;
-    padding: 20px 20px;
+    padding: 10px 20px;
     resize: none;
     box-sizing: border-box;        
 }
@@ -107,6 +107,12 @@
     padding: 16px 20px 0;
 }
 
+label{
+    font-family: 'Geologica', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
 .form-control label, .form-text label {
     position: absolute;
     left: 20px;
@@ -116,6 +122,7 @@
     pointer-events: none;
     color: white;
     opacity: 1;
+    line-height: 12px;
     transition: all 0.1s ease;
 }
 
@@ -124,7 +131,6 @@
 }
 .form-text.textarea-has-content label {
     display: none;
-
 }
 
 .inputs {
@@ -181,3 +187,4 @@
 .form .form-help :where(label, a) {
     font-size: 0.9rem;
 }
+

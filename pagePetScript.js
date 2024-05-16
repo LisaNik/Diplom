@@ -216,9 +216,17 @@ console.log(localStorage.getItem('likedId'));
   }
   
   const hideModal = () => {
-    const modal = document.getElementById('modal')
-  
-    modal.classList.remove('visible')
+    const modal = document.getElementById('modal');  
+    modal.classList.remove('visible');
+
+    document.querySelectorAll('input').forEach(input => {
+      input.value = ''; // Очищаем содержимое каждого поля ввода
+  });
+    document.querySelectorAll('textarea').forEach(textarea => {
+      textarea.value = ''; // Очищаем содержимое каждого поля ввода
+  });
+
+  document.querySelector('.form-text').classList.remove('textarea-has-content');
   }
   
 
