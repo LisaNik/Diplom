@@ -1,4 +1,22 @@
 ﻿
+#site-header {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    background-color: #5B85F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 132px;
+    transition: all 0.5s ease 0s;
+    z-index: 9001;
+}
+
+#site-header.hide {
+    top: -100px;
+}
+
+
 .background-yellow {
     width: 100%;
     height: fit-content;
@@ -163,9 +181,7 @@
     font-size: 64px;
     margin-bottom: 36px;
 }
-.transparent{
-    margin: 0;
-}
+
 
 .cards {
     display: grid;
@@ -344,4 +360,9 @@
 
 .image-pet{
     height: 520px;
+}
+
+
+.but{
+    gap: 10px;
 }

@@ -11,28 +11,29 @@
     <title></title>
 </head>
 <body>
-<header id="site-header">
-    <a href="home.html">
-        <img alt="logo" class="logo" src="images/Group.svg"/>
-    </a>
-    <nav>
-        <ul class="nav_links">
-            <li><a href="home.html#about">Про нас</a></li>
-            <li><a href="home.html#analysis">Статистика</a></li>
-            <li><a href="home.html#donations">Допомога</a></li>
-            <li><a href="home.html#catalog">Каталог</a></li>
-        </ul>
-    </nav>
-    <div>
-            <button class="button-like">а</button>
-        <a class="cta" href="#">
-            <button class="button transparent">Задонатити</button>
+    <header id="site-header">
+        <a href="home.html">
+            <img class="logo" src="images/Group.svg" alt="logo"/>
         </a>
-        <a class="cta" href="pets.html?id=all">
-            <button class="button yellow" id="all">Знайти друга</button>
-        </a>
-    </div>
-</header>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="home.html#about">Про нас</a></li>
+                <li><a href="home.html#analysis">Статистика</a></li>
+                <li><a href="home.html#donations">Допомога</a></li>
+                <li><a href="home.html#catalog">Каталог</a></li>
+            </ul>
+        </nav>
+        <but>
+                <button class="button-like" id="toggleSidebar">а</button>
+            <a class="cta" href="#">
+                <button class="button transparent">Задонатити</button>
+            </a>
+            <a class="cta" href="pets.html?id=all">
+                <button class="button yellow">Знайти друга</button>
+            </a>
+        </but>
+    </header>
+    
 
 <section class="animals" id="about">
     <div class="background-yellow">
@@ -139,6 +140,18 @@
     </div>
 </section>
 
+
+<div class="black-back"></div>
+<div class="sidebar">
+    <div class="sidebar-wrapper">
+        <div class="sidebar-title">                
+            <button class="button x-button" onclick="showSidebar()">а</button>
+            <h2>Обранці</h2>
+        </div>
+        <div class="sidebar-cards">
+        </div>
+    </div>  
+</div> 
 
 <section class="footer">
     <div class="waves">

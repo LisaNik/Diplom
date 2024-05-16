@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // console.log(sessionStorage.getItem('petData'));
     getDataPhp();
-
-    
+    showLikedPetCards();    
 });
+
 
 async function getDataPhp() {
     const res = await fetch('./profile.php');
@@ -132,3 +132,103 @@ const likePetButton = document.querySelector('.like-pet');
     modal.classList.remove('visible')
   }
   
+
+  const homeLike =document.getElementById("toggleSidebar");
+  
+  homeLike.addEventListener('click', function() {
+    showSidebar();
+    showLikedPetCards();
+});
+
+function showSidebar(){
+const sidebar = document.querySelector('.sidebar');
+sidebar.classList.toggle('active');
+
+const blackBack = document.querySelector('.black-back');
+if (sidebar.classList.contains('active')) {
+    blackBack.classList.add('visible');
+} else {
+    blackBack.classList.remove('visible');
+}
+}
+
+function showLikedPetCards(){    
+const div = document.querySelector('.sidebar-cards');
+while (div.firstChild) {
+  div.removeChild(div.firstChild);
+}
+
+data.forEach(profile => {
+  if (likedId.includes(profile.name)) {
+      const profileLikedCard = createLikedProfile(profile);
+      createLikePetButton(profileLikedCard);        
+  }
+});
+}
+
+function createLikePetButton(profileCard) {
+const linksDiv = document.createElement('div');
+linksDiv.classList.add('card_links');
+linksDiv.innerHTML = `    
+<button class="button yellow-pet" >Усиновити</button>
+  <button class="like-pet chosen">а</button>
+`;
+
+const likePetButton = linksDiv.querySelector('.like-pet');
+const yellowPetButton = linksDiv.querySelector('.button.yellow-pet');
+
+likePetButton.addEventListener('click', function() {
+
+  const parentClass = this.closest('.liked-card');
+  const parentId = parentClass.id;
+
+  //Ищем лайкнутую кнопку в классе card
+  // const cardId = document.querySelector(`.liked-card#${parentId}`);
+
+  //     // Находим кнопку "like-pet" внутри элемента "card"
+  // const likeCardButton = cardId.querySelector('.like-pet');
+  //     // Применяем toggle к классу "chosen" кнопки "like-pet"
+  // likeCardButton.classList.toggle('chosen');
+
+  likePetButton.classList.toggle('chosen');
+
+              
+  const index = likedId.indexOf(parentId);
+  likedId.splice(index,1);
+  
+  showLikedPetCards();
+  localStorage.setItem('likedId',likedId);
+  
+});
+
+yellowPetButton.addEventListener('click', function() {
+  const parentClass = this.closest('.liked-card');
+  const parentId = parentClass.id;
+  localStorage.setItem('petPageId', parentId);
+  window.location = 'petPage.html';
+  // console.log('petPageId');
+});
+
+profileCard.appendChild(linksDiv); // Append the button to the profile card
+}
+
+
+function createLikedProfile(data) {
+  const profileDiv = document.createElement('div');
+  profileDiv.classList.add('liked-card');
+  
+  profileDiv.id = data.name;
+  profileDiv.innerHTML = `
+      <img src="imagesPets/${data.img}">        
+      <h3>${data.name}</h3>            
+      <h4>${data.info}</h4>
+
+  `;
+  document.querySelector('.sidebar-cards').appendChild(profileDiv);
+  
+   // Trigger reflow to restart the transition
+   profileDiv.offsetHeight;
+   // Apply fade-in animation by changing opacity
+   profileDiv.style.opacity = '1'; 
+  return profileDiv;
+}
