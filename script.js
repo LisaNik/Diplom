@@ -146,10 +146,11 @@ const questions = ["Твоя тваринка дуже активна та лю�
                 ,"Ти завжди мріяв про розумного чотирилапого друга."
                 ,"Ти маєш великий дім, де тваринці буде просторно."
                 ,"Тобі важливо, щоб тваринка була слухняною."
-                ,"Тобі подобається, коли тваринка грається з іншими тваринками."              
+                ,"Тобі подобається, коли тваринка грається з іншими тваринками."
               ];
 
-var answers = [];             
+var answers = []; 
+var weights = [];            
 
 const quizStart = document.getElementById('quiz-btn');
 const backgroundQuestion = document.querySelector('.background-quiz');
@@ -191,8 +192,7 @@ quizStart.addEventListener("click", function() {
       }else if(element.id === "type5"){
         answers.push(5);
       }
-
-      console.log(answers);    
+    
       element.classList.remove('answer');
 
       
@@ -205,6 +205,8 @@ quizStart.addEventListener("click", function() {
         quizButtons.forEach(button => {
           button.style.display = 'none';
         });
+
+        console.log(answers);
         
     getParamPhp(answers);
         quizStart.style.display = 'none';

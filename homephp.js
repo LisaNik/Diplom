@@ -4,11 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     getDataPhp();
 });
 
+
+//Результат тесту за формулою
 async function getParamPhp(answers) {
     const res = await fetch('./parameters.php');
     parameters = await res.json(); 
     
-    const valuesArray = parameters.map(Object.values);//массив без названий
+    const valuesArray = parameters.map(Object.values); //массив без назв
 
     console.log(valuesArray); 
 
@@ -18,27 +20,30 @@ async function getParamPhp(answers) {
     });
 
 console.log(mixedMatrix); 
-let minValue;
-let minName;
-console.log(minValue);
-mixedMatrix.forEach(pet => {
-    let formula = pet
-        .slice(1)
-        .map((attribute, idx) => {
-            return Math.pow(attribute-answers[idx],2)
-        })
-        .reduce((accum, value) => accum + value,0);
-    
-    formula = Math.sqrt(formula); 
 
-    if(minValue > formula || !minValue){
+let minValue = Infinity; // Початкове значення, яке гарантовано буде перевищено
+let minName = '';
+
+mixedMatrix.forEach(pet => {
+    // Обчислюємо евклідову відстань
+    let formula = pet.slice(1)
+        .map((attribute, idx) => Math.pow(attribute - answers[idx], 2))
+        .reduce((accum, value) => accum + value, 0);
+
+    formula = Math.sqrt(formula);
+
+    // Оновлюємо мінімальне значення та назву, якщо знайдено меншу відстань
+    if (minValue > formula) {
         minValue = formula;
         minName = pet[0];
-    }       
+    }
 });
 
-console.log(minValue);
-console.log(minName);
+// Виводимо найкращу тваринку
+console.log(minName + " - " + minValue);
+
+
+//console.log(minName);
 showBestCard(minName);
 }
 

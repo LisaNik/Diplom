@@ -543,3 +543,26 @@ button{
 .sidebar-cards{
     width:auto;  
 }
+
+
+.empty {
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Для выравнивания текста по центру */
+    height: 100%; /* Убедитесь, что высота блока охватывает всю высоту родительского контейнера */    
+    display: none;
+}
+
+.empty img {
+    margin-bottom: 30px; /* Дополнительный отступ снизу для изображения */
+    height: 160px;
+}
+
+.empty h1{
+    color: white;
+    font-family: 'Geologica', sans-serif;
+    font-size: 32px;
+}

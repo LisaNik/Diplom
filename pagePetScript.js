@@ -7,8 +7,10 @@ let likedId =[];
 document.addEventListener('DOMContentLoaded', () => {
     
     console.log(localStorage.getItem('likedId'));
-    likedId=localStorage.getItem('likedId').split(',');
-    console.log(likedId);
+    if(localStorage.getItem('likedId')){
+      likedId=localStorage.getItem('likedId').split(',');
+      console.log(likedId);
+    }
   
     // console.log(sessionStorage.getItem('petData'));
     getDataPhp();
@@ -52,9 +54,7 @@ function createProfile(data) {
   `;
   document.querySelector('.cards').appendChild(profileDiv);
   
-   // Trigger reflow to restart the transition
    profileDiv.offsetHeight;
-   // Apply fade-in animation by changing opacity
    profileDiv.style.opacity = '1'; 
   return profileDiv;
 }
@@ -125,6 +125,8 @@ function getPetData(){
             document.querySelector('.features-pet').textContent = profile.info;
             document.querySelector('.discr').textContent = profile.about;
             document.querySelector('.image-pet').src = `imagesPets/${profile.img}`;
+
+            localStorage.setItem('petName',petName);
 
             if(localStorage.getItem('likedId').includes(profile.name)){
               document.querySelector('.like-pet').classList.add('chosen');      

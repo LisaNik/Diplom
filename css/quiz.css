@@ -227,7 +227,7 @@ button{
 }
 
 
-.like-pet {
+/* .like-pet {
     width: 54px;
     height: 54px;
     margin-left: 0px;
@@ -243,15 +243,15 @@ button{
 }
 .chosen {
     background-image: url('../images/likeschosen.svg');
-}
+} */
 
-.like-pet:hover {
+/* .like-pet:hover {
     background-image: url('../images/likehover.svg');
 }
 
 .chosen:hover {
     background-image: url('../images/likeschosen.svg');
-}
+} */
 /* .best-cards {
     display: grid;
     grid-template-columns: 282px 282px 282px 282px;

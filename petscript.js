@@ -27,8 +27,7 @@ function showFilteredContent(btn, index) {
     btn.classList.add('active-btn');
     allFilterUnder[index].classList.add('underline-active');            
     PetType = btn.id;   
-    getAllData();
-   
+    getAllData();    
 }
 
 function resetActiveBtn() {
@@ -118,12 +117,11 @@ console.log("Selected Gender:", selectedGender);
 
 // Function to handle the search button click event
 function handleSearchButtonClick() {
-    // Clear the arrays before adding new selections
+   
     selectedSize = [];
     selectedAge = [];
     selectedGender = [];
 
-    // Iterate through dropdown menus and populate respective arrays
     containers.forEach(container => {
         const items = container.querySelectorAll(".item.checked");
         const parameterType = container.getAttribute("id");
@@ -171,7 +169,6 @@ function handleSearchButtonClick() {
     }
 
     getAllData();
-
 }
 
 // Add click event listener to the "Search" button

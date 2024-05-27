@@ -125,7 +125,30 @@ button {
     background-color: #7C9DF8;
     border: none;
     color: transparent;
-    background-image: url(../images/heart.png);
+    background-image: url(../images/likes.svg);
+}
+
+.like{    
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    background-color: #7C9DF8;
+    border: none;
+    color: transparent;
+    background-image: url(../images/likes.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.like:hover {
+    width: 64px;
+    height: 64px;
+    transition: all 0.3s ease 0s;
+    background-image: url(../images/heart_hover.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .button-like:hover {
@@ -359,7 +382,7 @@ p {
 }
 
 .game-result img {
-    width: 444px;
+    width: 322px;
     object-fit: contain;
     margin-bottom: 16px;
     border-radius: 32px;
@@ -379,11 +402,16 @@ p {
     line-height: 16px;
     font-weight: 300;
     color: #fff;
+    margin-top: 5px;
 }
 
 .game-result-actions {
     display: flex;
     margin-top: 16px;
+}
+.game-result-actions .yellow{
+    height: 64px;
+    margin-right: 16px;
 }
 
 .game-result-actions > *:first-child {

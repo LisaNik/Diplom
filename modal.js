@@ -14,12 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('send').addEventListener("click", e => {
     e.preventDefault();
+    
     const data = {
         name: document.getElementById('name').value,
         surname: document.getElementById('surname').value,
         phone: document.getElementById('phone').value,
         email: document.getElementById('email').value,
-        comment: document.getElementById('comment').value
+        comment: document.getElementById('comment').value,
+        petname: localStorage.getItem('petName')
     }
     
     if(data.name==='' || data.surname==='' || data.phone==='' || data.email ==='' ){        

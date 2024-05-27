@@ -19,6 +19,7 @@ function showLikedCards(){
             createLikeButton(profileLikedCard);            
         }
     });
+
 }
 
 async function getDataPhp() {
@@ -154,6 +155,13 @@ function createButton(profileCard) {
     });
 
     profileCard.appendChild(linksDiv); // Append the button to the profile card
+
+    
+    if (document.querySelector('.cards').children.length === 0) {
+        document.querySelector('.empty').style.display = "flex";
+    } else {
+        document.querySelector('.empty').style.display = "none";
+    }
 }
 
 

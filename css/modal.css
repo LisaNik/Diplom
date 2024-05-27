@@ -2,6 +2,10 @@
     display: none;
 }
 
+#donation #send{
+    margin-top: 20px;
+}
+
 .modal-backdrop {
     position: fixed;
     top: 0;
